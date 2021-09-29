@@ -1,0 +1,17 @@
+"","plot_code","is_stock","ingrowth_core_num","time_step_minutes","core_id","number_of_timesteps","total_days_between","total_roots_mass","method_used","npp_g_per_day","npp_MgC_ha_year"
+"1","ABC-01","N","1",10,"ABC-01_1",4,392,1.3238656360375,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00337720825519771,0.613085239055927
+"2","ABC-01","N","10",10,"ABC-01_10",4,392,7.60643555645238,"Logarithmic Logarithmic Logarithmic Logarithmic",0.0194041723378887,3.52255790508261
+"3","ABC-01","N","11",10,"ABC-01_11",4,392,3.37318934639665,"Logarithmic Logarithmic just_maximum just_maximum",0.00860507486325675,1.56213179081107
+"4","ABC-01","N","12",10,"ABC-01_12",4,392,2.26863722641252,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00578733986329724,1.05061114846167
+"5","ABC-01","N","13",10,"ABC-01_13",4,392,1.09052395416053,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00278194886265442,0.505024166299749
+"6","ABC-01","N","14",10,"ABC-01_14",4,392,1.2460303287174,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00317864879774848,0.577039528149671
+"7","ABC-01","N","15",10,"ABC-01_15",4,392,2.08346437975246,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00531496015242974,0.96485717474191
+"8","ABC-01","N","16",10,"ABC-01_16",4,392,2.20408543075195,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00562266691518356,1.02071706253879
+"9","ABC-01","N","2",10,"ABC-01_2",4,392,1.4939943931461,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00381121018659719,0.69187226009713
+"10","ABC-01","N","3",10,"ABC-01_3",4,392,2.53687449243903,"Logarithmic Logarithmic Logarithmic Logarithmic",0.0064716186031608,1.17483244697486
+"11","ABC-01","N","4",10,"ABC-01_4",4,392,0.534214201301712,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00136279132985131,0.247395832625762
+"12","ABC-01","N","5",10,"ABC-01_5",4,392,3.24749423660714,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00828442407297741,1.50392209464876
+"13","ABC-01","N","6",10,"ABC-01_6",4,392,1.38399877838236,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00353060912852643,0.64093303640493
+"14","ABC-01","N","7",10,"ABC-01_7",4,392,0.545727503548457,"Logarithmic Logarithmic Logarithmic Logarithmic",0.0013921619988481,0.252727669534374
+"15","ABC-01","N","8",10,"ABC-01_8",4,392,1.97108971178395,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00502829008108152,0.912816206006205
+"16","ABC-01","N","9",10,"ABC-01_9",4,392,2.11241580264867,"Logarithmic Logarithmic Logarithmic Logarithmic",0.00538881582308335,0.978264645669595

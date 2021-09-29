@@ -1,0 +1,29 @@
+"Important note: one row is one measruement taken from a transect, you can have several measurements per transect, a single measurement could be a bag containing multiple pieces, OR could be a big branch that you can't weight, OR a single small branch that you can weight. Every measurement within a transect should have a unique measurement number, just like Rec_no of EGM flux measruement. The sum of all measurements under a transect will be the total weight for this transect",
+"Important note2: this csv is for branch NPP and small nacromass stock, don't use this for snag survey or nacromass survey, the diameter and length here is for branch, not dead stem",
+,
+,
+,
+Column Name,Meta Data
+plot_code,
+cwd_transect_num,"normally four transects of 100m by 1m width, some plots collect cwd along subplots or quadrat, you can understand this as a mini-transect, but it is important to write down your sample area (in m2)"
+transect_area_m2,"this must be corresponding to the area in such cwd_transect_num, it could be other things like quadract instead of transect."
+measurement_num,"this is the ""measurement"" noted in the ""important note"" above, so cwd_transect_num + masurement_num would be a unique id for each row (this just work like the rec_num in EGM flux measurement)"
+year,4 digits
+month,2 digits
+day,2 digits
+sub_transect_start_point,"if such measurment is a sub transect, or sub quadrat"
+sub_transect_end_point,
+size_class,"we have three size classes, from (a) 2-5cm ,  (b) 5-10cm, and (c) over 10cm. "
+decay_class,"there are normally 5 decay classes, but you might have more, each decay classes (categories) need a corresponding wood density"
+diameter_top_1_cm,"unit is cm, this diamater measurement 1 at top side which you use caliper to measure diamater in one direction (if your branch is not round)"
+diameter_top_2_cm,"unit is cm, this is diamater measurement 2 at top side which you use caliper to measure diamater in another direction (if your branch is not round), but if your branch is very cylindrical, or if you use tape, then this column should be NA"
+diameter_bottom_1_cm,same as above
+diameter_bottom_2_cm,same as above
+length_cm,"length of the branch, the above 5 columns are for branch that you can't lift, in this case , the forest weight must be NA"
+forest_weight_total_g,The total fresh weight you collected in a bag
+forest_weight_sample_g,"The fresh weight of the sample you took into the field (as a subset of the above ""total"")"
+dry_weight_sample_g,"The dry weight of the sample you took into the field, this must be smaller than Forest_weight_sample_g"
+quality_code,"not_sure, good, not_use"
+is_stock,"if this is your first measurment, it should be nacromass stock, say Y here. If this is NPP (your second measurement), say N."
+include_as_branch_npp,"say N here, if this measruement is a snag or huge dead steam, or stock measurement, or whatever that should be excluded from branch biomass/NPP measruement, say Y here if this measurement is part of branch NPP. Therefore, If you say Y to is_stock, then you must say N at this column. If you say N to is_stock, you normally say Y to this coumn but  sometime say N to this column for snag etc.. Your nacromass will source from is.stock=Y, Your branch NPP will source from include_as_NPP=Y"
+note,
