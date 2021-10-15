@@ -85,12 +85,10 @@ get_time_diffs <- function(date_vec){
 # here's an example
 library(lubridate)
 d1 <- parse_date_time(paste(2011,1,1),"ymd")
-d2 <- parse_date_time(paste(2015,1,1),"ymd")
-d3 <- parse_date_time(paste(2012,1,1),"ymd")
-d4 <- parse_date_time(paste(2012,1,1),"ymd")
-d5 <- parse_date_time(paste(2013,6,15),"ymd")
-date_vec<-c(d1,d2,d3,d4)
-get_time_diffs(c(d1,d2,d3,d4))
+d2 <- parse_date_time(paste(2012,1,1),"ymd")
+d3 <- parse_date_time(paste(2013,6,15),"ymd")
+
+get_time_diffs(c(d1,d2,d3))
 
 
 # Huanyuan Zhang update get_time_diffs because the above example is not working
@@ -105,47 +103,4 @@ get_time_diffs2 <- function(date_vec){
   My_input<-as.data.frame(data.frame(date_vec))
   my_out_put<-left_join(My_input,date_vec_unique,by='date_vec')
   return(my_out_put$c.NA..days_difference.);
-}
-get_time_diffs2(c(d1,d2,d3,d4))
-
-
-### See this page https://stackoverflow.com/questions/10077415/replacing-nas-in-r-with-nearest-value
-f1 <- function(dat) {
-  N <- length(dat)
-  na.pos <- which(is.na(dat))
-  if (length(na.pos) %in% c(0, N)) {
-    return(dat)
-  }
-  non.na.pos <- which(!is.na(dat))
-  intervals  <- findInterval(na.pos, non.na.pos,
-                             all.inside = TRUE)
-  left.pos   <- non.na.pos[pmax(1, intervals)]
-  right.pos  <- non.na.pos[pmin(N, intervals+1)]
-  left.dist  <- na.pos - left.pos
-  right.dist <- right.pos - na.pos
-  
-  dat[na.pos] <- ifelse(left.dist <= right.dist,
-                        dat[left.pos], dat[right.pos])
-  return(dat)
-}
-
-#The main reference is this paper, by Donald F. Gatz and Luther Smith, where 3
-#formula based estimators are compared with bootstrap results. The best
-#approximation to the bootstrap result comes from Cochran (1977):
-# https://stats.stackexchange.com/questions/25895/computing-standard-error-in-weighted-mean-estimation
-# the above method is wrong, now replaced with:
-# https://githubmemory.com/repo/harrelfe/Hmisc/issues/138
-# https://en.wikipedia.org/wiki/Weighted_arithmetic_mean#Statistical_properties
-
-weighted.var.se <- function(x, weights, na.rm = TRUE){
-  var <- Hmisc::wtd.var(x, weights, na.rm)
-  weights <- sum( (weights / sum(weights))^2 )
-  
-  sqrt(var*weights)
-}
-
-
-standard_error_calc <- function(x, na.rm=FALSE) {
-  if (na.rm) x <- na.omit(x)
-  sqrt(var(x)/length(x))
 }

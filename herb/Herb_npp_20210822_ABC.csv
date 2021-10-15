@@ -1,481 +1,481 @@
 plot_code,year,month,sub_plot,Treatment_code,quadrat_num,Plants_type,dry_mass_g,note,is_stock,day,quadrat_area_m2
-ABC-01,2018,12,1,caged,A1,grass,32.15,,Y,15,0.25
-ABC-01,2018,12,1,caged,A2,grass,94.98,,Y,15,0.25
-ABC-01,2018,12,1,caged,A3,grass,30.46,,Y,15,0.25
-ABC-01,2018,12,1,caged,A4,grass,55.4,,Y,15,0.25
-ABC-01,2018,12,1,caged,A5,grass,32.75,,Y,15,0.25
-ABC-01,2018,12,1,open,B1,grass,50.5,,Y,15,0.25
-ABC-01,2018,12,1,open,B2,grass,27.4,,Y,15,0.25
-ABC-01,2018,12,1,open,B3,grass,77.7,,Y,15,0.25
-ABC-01,2018,12,1,open,B4,grass,48.96,,Y,15,0.25
-ABC-01,2018,12,1,open,B5,grass,103.8,,Y,15,0.25
-ABC-01,2018,12,1,caged,C1,grass,71.4,,Y,15,0.25
-ABC-01,2018,12,1,caged,C2,grass,52.63,,Y,15,0.25
-ABC-01,2018,12,1,caged,C3,grass,53.5,,Y,15,0.25
-ABC-01,2018,12,1,caged,C4,grass,49.38,,Y,15,0.25
-ABC-01,2018,12,1,caged,C5,grass,36.14,,Y,15,0.25
-ABC-01,2018,12,1,open,D1,grass,48.59,,Y,15,0.25
-ABC-01,2018,12,1,open,D2,grass,68.07,,Y,15,0.25
-ABC-01,2018,12,1,open,D3,grass,37.71,,Y,15,0.25
-ABC-01,2018,12,1,open,D4,grass,79.61,,Y,15,0.25
-ABC-01,2018,12,1,open,D5,grass,55,,Y,15,0.25
-ABC-01,2018,12,1,caged,E1,grass,59.36,,Y,15,0.25
-ABC-01,2018,12,1,caged,E2,grass,36.1,,Y,15,0.25
-ABC-01,2018,12,1,caged,E3,grass,36.2,,Y,15,0.25
-ABC-01,2018,12,1,caged,E4,grass,56.89,,Y,15,0.25
-ABC-01,2018,12,1,caged,E5,grass,72.93,,Y,15,0.25
-ABC-01,2018,12,1,open,F1,grass,53.03,,Y,15,0.25
-ABC-01,2018,12,1,open,F2,grass,88.71,,Y,15,0.25
-ABC-01,2018,12,1,open,F3,grass,17.93,,Y,15,0.25
-ABC-01,2018,12,1,open,F4,grass,50.08,,Y,15,0.25
-ABC-01,2018,12,1,open,F5,grass,38.61,,Y,15,0.25
-ABC-01,2018,12,2,caged,A1,grass,18.32,,Y,15,0.25
-ABC-01,2018,12,2,caged,A2,grass,25.97,,Y,15,0.25
-ABC-01,2018,12,2,caged,A3,grass,40.54,,Y,15,0.25
-ABC-01,2018,12,2,caged,A4,grass,24.14,,Y,15,0.25
-ABC-01,2018,12,2,caged,A5,grass,31.93,,Y,15,0.25
-ABC-01,2018,12,2,open,B1,grass,26.71,,Y,15,0.25
-ABC-01,2018,12,2,open,B2,grass,51.5,,Y,15,0.25
-ABC-01,2018,12,2,open,B3,grass,66.4,,Y,15,0.25
-ABC-01,2018,12,2,open,B4,grass,113.4,,Y,15,0.25
-ABC-01,2018,12,2,open,B5,grass,23.96,,Y,15,0.25
-ABC-01,2018,12,2,caged,C1,grass,47.8,,Y,15,0.25
-ABC-01,2018,12,2,caged,C2,grass,30.66,,Y,15,0.25
-ABC-01,2018,12,2,caged,C3,grass,37.65,,Y,15,0.25
-ABC-01,2018,12,2,caged,C4,grass,69.7,,Y,15,0.25
-ABC-01,2018,12,2,caged,C5,grass,103.05,,Y,15,0.25
-ABC-01,2018,12,2,open,D1,grass,20.58,,Y,15,0.25
-ABC-01,2018,12,2,open,D2,grass,57.95,,Y,15,0.25
-ABC-01,2018,12,2,open,D3,grass,40.17,,Y,15,0.25
-ABC-01,2018,12,2,open,D4,grass,17.71,,Y,15,0.25
-ABC-01,2018,12,2,open,D5,grass,24.55,,Y,15,0.25
-ABC-01,2018,12,2,caged,E1,grass,124.58,,Y,15,0.25
-ABC-01,2018,12,2,caged,E2,grass,85.81,,Y,15,0.25
-ABC-01,2018,12,2,caged,E3,grass,53.21,,Y,15,0.25
-ABC-01,2018,12,2,caged,E4,grass,61.6,,Y,15,0.25
-ABC-01,2018,12,2,caged,E5,grass,92.82,,Y,15,0.25
-ABC-01,2018,12,2,open,F1,grass,50.6,,Y,15,0.25
-ABC-01,2018,12,2,open,F2,grass,30.12,,Y,15,0.25
-ABC-01,2018,12,2,open,F3,grass,43.85,,Y,15,0.25
-ABC-01,2018,12,2,open,F4,grass,59.04,,Y,15,0.25
-ABC-01,2018,12,2,open,F5,grass,46.22,,Y,15,0.25
-ABC-01,2018,12,3,caged,A1,grass,34.73,,Y,15,0.25
-ABC-01,2018,12,3,caged,A2,grass,34.25,,Y,15,0.25
-ABC-01,2018,12,3,caged,A3,grass,34.63,,Y,15,0.25
-ABC-01,2018,12,3,caged,A4,grass,33.07,,Y,15,0.25
-ABC-01,2018,12,3,caged,A5,grass,23.36,,Y,15,0.25
-ABC-01,2018,12,3,open,B1,grass,36.55,,Y,15,0.25
-ABC-01,2018,12,3,open,B2,grass,38.81,,Y,15,0.25
-ABC-01,2018,12,3,open,B3,grass,99.47,,Y,15,0.25
-ABC-01,2018,12,3,open,B4,grass,34.15,,Y,15,0.25
-ABC-01,2018,12,3,open,B5,grass,96.13,,Y,15,0.25
-ABC-01,2018,12,3,caged,C1,grass,31.64,,Y,15,0.25
-ABC-01,2018,12,3,caged,C2,grass,26.12,,Y,15,0.25
-ABC-01,2018,12,3,caged,C3,grass,61.05,,Y,15,0.25
-ABC-01,2018,12,3,caged,C4,grass,46.83,,Y,15,0.25
-ABC-01,2018,12,3,caged,C5,grass,22.24,,Y,15,0.25
-ABC-01,2018,12,3,open,D1,grass,32.9,,Y,15,0.25
-ABC-01,2018,12,3,open,D2,grass,64.5,,Y,15,0.25
-ABC-01,2018,12,3,open,D3,grass,90.35,,Y,15,0.25
-ABC-01,2018,12,3,open,D4,grass,75.26,,Y,15,0.25
-ABC-01,2018,12,3,open,D5,grass,89.45,,Y,15,0.25
-ABC-01,2018,12,3,caged,E1,grass,59.32,,Y,15,0.25
-ABC-01,2018,12,3,caged,E2,grass,26.52,,Y,15,0.25
-ABC-01,2018,12,3,caged,E3,grass,21.14,,Y,15,0.25
-ABC-01,2018,12,3,caged,E4,grass,27.48,,Y,15,0.25
-ABC-01,2018,12,3,caged,E5,grass,27.18,,Y,15,0.25
-ABC-01,2018,12,3,open,F1,grass,23.24,,Y,15,0.25
-ABC-01,2018,12,3,open,F2,grass,37.55,,Y,15,0.25
-ABC-01,2018,12,3,open,F3,grass,26.06,,Y,15,0.25
-ABC-01,2018,12,3,open,F4,grass,26.64,,Y,15,0.25
-ABC-01,2018,12,3,open,F5,grass,44.23,,Y,15,0.25
-ABC-01,2018,12,4,caged,A1,grass,26.81,,Y,15,0.25
-ABC-01,2018,12,4,caged,A2,grass,53.74,,Y,15,0.25
-ABC-01,2018,12,4,caged,A3,grass,22.53,,Y,15,0.25
-ABC-01,2018,12,4,caged,A4,grass,26.24,,Y,15,0.25
-ABC-01,2018,12,4,caged,A5,grass,58.4,,Y,15,0.25
-ABC-01,2018,12,4,open,B1,grass,26.1,,Y,15,0.25
-ABC-01,2018,12,4,open,B2,grass,43.12,,Y,15,0.25
-ABC-01,2018,12,4,open,B3,grass,40.5,,Y,15,0.25
-ABC-01,2018,12,4,open,B4,grass,19.96,,Y,15,0.25
-ABC-01,2018,12,4,open,B5,grass,25.09,,Y,15,0.25
-ABC-01,2018,12,4,caged,C1,grass,42.67,,Y,15,0.25
-ABC-01,2018,12,4,caged,C2,grass,72.85,,Y,15,0.25
-ABC-01,2018,12,4,caged,C3,grass,0,on mound,Y,15,0.25
-ABC-01,2018,12,4,caged,C4,grass,27.74,,Y,15,0.25
-ABC-01,2018,12,4,caged,C5,grass,52.6,,Y,15,0.25
-ABC-01,2018,12,4,open,D1,grass,23.32,,Y,15,0.25
-ABC-01,2018,12,4,open,D2,grass,51.6,,Y,15,0.25
-ABC-01,2018,12,4,open,D3,grass,18.54,,Y,15,0.25
-ABC-01,2018,12,4,open,D4,grass,21.43,,Y,15,0.25
-ABC-01,2018,12,4,open,D5,grass,20.44,,Y,15,0.25
-ABC-01,2018,12,4,caged,E1,grass,35,,Y,15,0.25
-ABC-01,2018,12,4,caged,E2,grass,34.64,,Y,15,0.25
-ABC-01,2018,12,4,caged,E3,grass,49.56,,Y,15,0.25
-ABC-01,2018,12,4,caged,E4,grass,28.35,,Y,15,0.25
-ABC-01,2018,12,4,caged,E5,grass,38.18,,Y,15,0.25
-ABC-01,2018,12,4,open,F1,grass,88.61,,Y,15,0.25
-ABC-01,2018,12,4,open,F2,grass,31.32,,Y,15,0.25
-ABC-01,2018,12,4,open,F3,grass,24.06,,Y,15,0.25
-ABC-01,2018,12,4,open,F4,grass,15.65,,Y,15,0.25
-ABC-01,2018,12,4,open,F5,grass,19.63,,Y,15,0.25
-ABC-01,2019,3,1,caged,A1,grass ,0.92,,N,15,0.25
-ABC-01,2019,3,1,caged,A1,woody,0,,N,15,0.25
-ABC-01,2019,3,1,caged,A1,herbs,0.06,,N,15,0.25
-ABC-01,2019,3,1,caged,A5,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,caged,A5,woody,0,,N,15,0.25
-ABC-01,2019,3,1,caged,A5,herbs,0.8,,N,15,0.25
-ABC-01,2019,3,1,open,B3,grass ,44.57,,N,15,0.25
-ABC-01,2019,3,1,open,B3,woody,0,,N,15,0.25
-ABC-01,2019,3,1,open,B3,herbs,1.73,,N,15,0.25
-ABC-01,2019,3,1,caged,C2,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,caged,C2,woody,2.17,,N,15,0.25
-ABC-01,2019,3,1,caged,C2,herbs,0,,N,15,0.25
-ABC-01,2019,3,1,caged,C4,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,caged,C4,woody,0,,N,15,0.25
-ABC-01,2019,3,1,caged,C4,herbs,0,,N,15,0.25
-ABC-01,2019,3,1,open,D2,grass ,5.65,,N,15,0.25
-ABC-01,2019,3,1,open,D2,woody,0,,N,15,0.25
-ABC-01,2019,3,1,open,D2,herbs,0,,N,15,0.25
-ABC-01,2019,3,1,open,D4,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,open,D4,woody,0,,N,15,0.25
-ABC-01,2019,3,1,open,D4,herbs,0.65,,N,15,0.25
-ABC-01,2019,3,1,caged,E3,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,caged,E3,woody,2.88,,N,15,0.25
-ABC-01,2019,3,1,caged,E3,herbs,0,,N,15,0.25
-ABC-01,2019,3,1,open,F1,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,3,1,open,F1,herbs,0,,N,15,0.25
-ABC-01,2019,3,1,open,F5,grass ,0,,N,15,0.25
-ABC-01,2019,3,1,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,3,1,open,F5,herbs,0,,N,15,0.25
-ABC-01,2019,3,2,caged,A1,grass ,27.19,,N,15,0.25
-ABC-01,2019,3,2,caged,A1,woody,0,,N,15,0.25
-ABC-01,2019,3,2,caged,A1,herbs,10.79,,N,15,0.25
-ABC-01,2019,3,2,caged,A5,grass ,15.75,,N,15,0.25
-ABC-01,2019,3,2,caged,A5,woody,8.79,,N,15,0.25
-ABC-01,2019,3,2,caged,A5,herbs,0,,N,15,0.25
-ABC-01,2019,3,2,open,B3,grass ,33.67,,N,15,0.25
-ABC-01,2019,3,2,open,B3,woody,0,,N,15,0.25
-ABC-01,2019,3,2,open,B3,herbs,7.98,,N,15,0.25
-ABC-01,2019,3,2,caged,C2,grass ,22.74,,N,15,0.25
-ABC-01,2019,3,2,caged,C2,woody,0,,N,15,0.25
-ABC-01,2019,3,2,caged,C2,herbs,4.84,,N,15,0.25
-ABC-01,2019,3,2,caged,C4,grass ,23.35,,N,15,0.25
-ABC-01,2019,3,2,caged,C4,woody,0,,N,15,0.25
-ABC-01,2019,3,2,caged,C4,herbs,17.16,,N,15,0.25
-ABC-01,2019,3,2,open,D2,grass ,4.21,,N,15,0.25
-ABC-01,2019,3,2,open,D2,woody,0,,N,15,0.25
-ABC-01,2019,3,2,open,D2,herbs,3.19,,N,15,0.25
-ABC-01,2019,3,2,open,D4,grass ,20.2,,N,15,0.25
-ABC-01,2019,3,2,open,D4,woody,0,,N,15,0.25
-ABC-01,2019,3,2,open,D4,herbs,1.28,,N,15,0.25
-ABC-01,2019,3,2,caged,E3,grass ,2.7,,N,15,0.25
-ABC-01,2019,3,2,caged,E3,woody,0,,N,15,0.25
-ABC-01,2019,3,2,caged,E3,herbs,12.05,,N,15,0.25
-ABC-01,2019,3,2,open,F1,grass ,45.71,,N,15,0.25
-ABC-01,2019,3,2,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,3,2,open,F1,herbs,4.02,,N,15,0.25
-ABC-01,2019,3,2,open,F5,grass ,7.66,,N,15,0.25
-ABC-01,2019,3,2,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,3,2,open,F5,herbs,7,,N,15,0.25
-ABC-01,2019,3,3,caged,A1,grass ,40.54,,N,15,0.25
-ABC-01,2019,3,3,caged,A1,woody,0,,N,15,0.25
-ABC-01,2019,3,3,caged,A1,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,caged,A5,grass ,37.94,,N,15,0.25
-ABC-01,2019,3,3,caged,A5,woody,0,,N,15,0.25
-ABC-01,2019,3,3,caged,A5,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,open,B3,grass ,50.36,,N,15,0.25
-ABC-01,2019,3,3,open,B3,woody,0,,N,15,0.25
-ABC-01,2019,3,3,open,B3,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,caged,C2,grass ,40.44,,N,15,0.25
-ABC-01,2019,3,3,caged,C2,woody,0,,N,15,0.25
-ABC-01,2019,3,3,caged,C2,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,caged,C4,grass ,21.79,,N,15,0.25
-ABC-01,2019,3,3,caged,C4,woody,0,,N,15,0.25
-ABC-01,2019,3,3,caged,C4,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,open,D2,grass ,31.96,,N,15,0.25
-ABC-01,2019,3,3,open,D2,woody,0,,N,15,0.25
-ABC-01,2019,3,3,open,D2,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,open,D4,grass ,0,,N,15,0.25
-ABC-01,2019,3,3,open,D4,woody,0,,N,15,0.25
-ABC-01,2019,3,3,open,D4,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,caged,E3,grass ,0,,N,15,0.25
-ABC-01,2019,3,3,caged,E3,woody,0,,N,15,0.25
-ABC-01,2019,3,3,caged,E3,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,open,F1,grass ,0,,N,15,0.25
-ABC-01,2019,3,3,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,3,3,open,F1,herbs,0,,N,15,0.25
-ABC-01,2019,3,3,open,F5,grass ,0,,N,15,0.25
-ABC-01,2019,3,3,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,3,3,open,F5,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,caged,A1,grass ,0,,N,15,0.25
-ABC-01,2019,3,4,caged,A1,woody,0,,N,15,0.25
-ABC-01,2019,3,4,caged,A1,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,caged,A5,grass ,0,,N,15,0.25
-ABC-01,2019,3,4,caged,A5,woody,0,,N,15,0.25
-ABC-01,2019,3,4,caged,A5,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,open,B3,grass ,0,,N,15,0.25
-ABC-01,2019,3,4,open,B3,woody,0,,N,15,0.25
-ABC-01,2019,3,4,open,B3,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,caged,C2,grass ,0,,N,15,0.25
-ABC-01,2019,3,4,caged,C2,woody,0,,N,15,0.25
-ABC-01,2019,3,4,caged,C2,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,caged,C4,grass ,0,,N,15,0.25
-ABC-01,2019,3,4,caged,C4,woody,0,,N,15,0.25
-ABC-01,2019,3,4,caged,C4,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,open,D2,grass ,15.75,,N,15,0.25
-ABC-01,2019,3,4,open,D2,woody,0,,N,15,0.25
-ABC-01,2019,3,4,open,D2,herbs,0.11,,N,15,0.25
-ABC-01,2019,3,4,open,D4,grass ,0,,N,15,0.25
-ABC-01,2019,3,4,open,D4,woody,0,,N,15,0.25
-ABC-01,2019,3,4,open,D4,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,caged,E3,grass ,44.04,,N,15,0.25
-ABC-01,2019,3,4,caged,E3,woody,0,,N,15,0.25
-ABC-01,2019,3,4,caged,E3,herbs,0.33,,N,15,0.25
-ABC-01,2019,3,4,open,F1,grass ,19.24,,N,15,0.25
-ABC-01,2019,3,4,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,3,4,open,F1,herbs,0,,N,15,0.25
-ABC-01,2019,3,4,open,F5,grass ,3.06,,N,15,0.25
-ABC-01,2019,3,4,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,3,4,open,F5,herbs,0.33,,N,15,0.25
-ABC-01,2019,7,1,caged,A2,grass ,50.36,,N,15,0.25
-ABC-01,2019,7,1,caged,A2,woody,1.1,,N,15,0.25
-ABC-01,2019,7,1,caged,A2,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,open,B2,grass ,8.57,,N,15,0.25
-ABC-01,2019,7,1,open,B2,woody,0.05,,N,15,0.25
-ABC-01,2019,7,1,open,B2,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,open,B4,grass ,16.43,,N,15,0.25
-ABC-01,2019,7,1,open,B4,woody,0,,N,15,0.25
-ABC-01,2019,7,1,open,B4,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,caged,C1,grass ,31.17,,N,15,0.25
-ABC-01,2019,7,1,caged,C1,woody,0,,N,15,0.25
-ABC-01,2019,7,1,caged,C1,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,caged,C5,grass ,25.97,,N,15,0.25
-ABC-01,2019,7,1,caged,C5,woody,0.22,,N,15,0.25
-ABC-01,2019,7,1,caged,C5,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,open,D3,grass ,17.68,,N,15,0.25
-ABC-01,2019,7,1,open,D3,woody,1.78,,N,15,0.25
-ABC-01,2019,7,1,open,D3,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,caged,E2,grass ,33.89,,N,15,0.25
-ABC-01,2019,7,1,caged,E2,woody,0.12,,N,15,0.25
-ABC-01,2019,7,1,caged,E2,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,caged,E4,grass ,29.76,,N,15,0.25
-ABC-01,2019,7,1,caged,E4,woody,0.3,,N,15,0.25
-ABC-01,2019,7,1,caged,E4,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,open,F1,grass ,1.56,,N,15,0.25
-ABC-01,2019,7,1,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,7,1,open,F1,herbs,0,,N,15,0.25
-ABC-01,2019,7,1,open,F5,grass ,0,,N,15,0.25
-ABC-01,2019,7,1,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,7,1,open,F5,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,caged,A2,grass ,0,,N,15,0.25
-ABC-01,2019,7,2,caged,A2,woody,0.05,,N,15,0.25
-ABC-01,2019,7,2,caged,A2,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,open,B2,grass ,15.48,,N,15,0.25
-ABC-01,2019,7,2,open,B2,woody,8.11,,N,15,0.25
-ABC-01,2019,7,2,open,B2,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,open,B4,grass ,35.47,,N,15,0.25
-ABC-01,2019,7,2,open,B4,woody,0,,N,15,0.25
-ABC-01,2019,7,2,open,B4,herbs,1.16,,N,15,0.25
-ABC-01,2019,7,2,caged,C1,grass ,74.59,,N,15,0.25
-ABC-01,2019,7,2,caged,C1,woody,0,,N,15,0.25
-ABC-01,2019,7,2,caged,C1,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,caged,C5,grass ,0,,N,15,0.25
-ABC-01,2019,7,2,caged,C5,woody,0.22,,N,15,0.25
-ABC-01,2019,7,2,caged,C5,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,open,D3,grass ,11.08,,N,15,0.25
-ABC-01,2019,7,2,open,D3,woody,2.36,,N,15,0.25
-ABC-01,2019,7,2,open,D3,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,caged,E2,grass ,27.19,,N,15,0.25
-ABC-01,2019,7,2,caged,E2,woody,0,,N,15,0.25
-ABC-01,2019,7,2,caged,E2,herbs,4.01,,N,15,0.25
-ABC-01,2019,7,2,caged,E4,grass ,11.24,,N,15,0.25
-ABC-01,2019,7,2,caged,E4,woody,1.71,,N,15,0.25
-ABC-01,2019,7,2,caged,E4,herbs,0,,N,15,0.25
-ABC-01,2019,7,2,open,F1,grass ,10.48,,N,15,0.25
-ABC-01,2019,7,2,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,7,2,open,F1,herbs,0.06,,N,15,0.25
-ABC-01,2019,7,2,open,F5,grass ,0.89,,N,15,0.25
-ABC-01,2019,7,2,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,7,2,open,F5,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,caged,A2,grass ,17.5,,N,15,0.25
-ABC-01,2019,7,3,caged,A2,woody,0.25,,N,15,0.25
-ABC-01,2019,7,3,caged,A2,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,open,B2,grass ,2.44,,N,15,0.25
-ABC-01,2019,7,3,open,B2,woody,0,,N,15,0.25
-ABC-01,2019,7,3,open,B2,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,open,B4,grass ,7.84,,N,15,0.25
-ABC-01,2019,7,3,open,B4,woody,0,,N,15,0.25
-ABC-01,2019,7,3,open,B4,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,caged,C1,grass ,22.76,,N,15,0.25
-ABC-01,2019,7,3,caged,C1,woody,0.26,,N,15,0.25
-ABC-01,2019,7,3,caged,C1,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,caged,C5,grass ,6.13,,N,15,0.25
-ABC-01,2019,7,3,caged,C5,woody,18.68,,N,15,0.25
-ABC-01,2019,7,3,caged,C5,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,open,D3,grass ,7.08,,N,15,0.25
-ABC-01,2019,7,3,open,D3,woody,0,,N,15,0.25
-ABC-01,2019,7,3,open,D3,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,caged,E2,grass ,9.53,,N,15,0.25
-ABC-01,2019,7,3,caged,E2,woody,0.7,,N,15,0.25
-ABC-01,2019,7,3,caged,E2,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,caged,E4,grass ,39.93,,N,15,0.25
-ABC-01,2019,7,3,caged,E4,woody,0.37,,N,15,0.25
-ABC-01,2019,7,3,caged,E4,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,open,F1,grass ,0.18,,N,15,0.25
-ABC-01,2019,7,3,open,F1,woody,0,,N,15,0.25
-ABC-01,2019,7,3,open,F1,herbs,0,,N,15,0.25
-ABC-01,2019,7,3,open,F5,grass ,0.33,,N,15,0.25
-ABC-01,2019,7,3,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,7,3,open,F5,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,caged,A2,grass ,25.41,,N,15,0.25
-ABC-01,2019,7,4,caged,A2,woody,0.08,,N,15,0.25
-ABC-01,2019,7,4,caged,A2,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,open,B2,grass ,26.18,,N,15,0.25
-ABC-01,2019,7,4,open,B2,woody,0.71,,N,15,0.25
-ABC-01,2019,7,4,open,B2,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,open,B4,grass ,6.99,,N,15,0.25
-ABC-01,2019,7,4,open,B4,woody,0.76,,N,15,0.25
-ABC-01,2019,7,4,open,B4,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,caged,C1,grass ,29.93,,N,15,0.25
-ABC-01,2019,7,4,caged,C1,woody,0.17,,N,15,0.25
-ABC-01,2019,7,4,caged,C1,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,caged,C5,grass ,26.07,,N,15,0.25
-ABC-01,2019,7,4,caged,C5,woody,0.54,,N,15,0.25
-ABC-01,2019,7,4,caged,C5,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,open,D3,grass ,60.77,,N,15,0.25
-ABC-01,2019,7,4,open,D3,woody,1.55,,N,15,0.25
-ABC-01,2019,7,4,open,D3,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,caged,E2,grass ,26.32,,N,15,0.25
-ABC-01,2019,7,4,caged,E2,woody,0.08,,N,15,0.25
-ABC-01,2019,7,4,caged,E2,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,caged,E4,grass ,14.09,,N,15,0.25
-ABC-01,2019,7,4,caged,E4,woody,1.81,,N,15,0.25
-ABC-01,2019,7,4,caged,E4,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,open,F1,grass ,12.3,,N,15,0.25
-ABC-01,2019,7,4,open,F1,woody,4.05,,N,15,0.25
-ABC-01,2019,7,4,open,F1,herbs,0,,N,15,0.25
-ABC-01,2019,7,4,open,F5,grass ,0,,N,15,0.25
-ABC-01,2019,7,4,open,F5,woody,0,,N,15,0.25
-ABC-01,2019,7,4,open,F5,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,caged,A3,grass ,67.86,,N,15,0.25
-ABC-01,2019,9,1,caged,A3,woody,0,,N,15,0.25
-ABC-01,2019,9,1,caged,A3,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,caged,A4,grass ,31.5,,N,15,0.25
-ABC-01,2019,9,1,caged,A4,woody,0,,N,15,0.25
-ABC-01,2019,9,1,caged,A4,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,open,B1,grass ,13.45,,N,15,0.25
-ABC-01,2019,9,1,open,B1,woody,0,,N,15,0.25
-ABC-01,2019,9,1,open,B1,herbs,0.05,,N,15,0.25
-ABC-01,2019,9,1,open,B5,grass ,59.47,,N,15,0.25
-ABC-01,2019,9,1,open,B5,woody,0,,N,15,0.25
-ABC-01,2019,9,1,open,B5,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,caged,C3,grass ,73.63,,N,15,0.25
-ABC-01,2019,9,1,caged,C3,woody,0,,N,15,0.25
-ABC-01,2019,9,1,caged,C3,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,open,D1,grass ,20.39,,N,15,0.25
-ABC-01,2019,9,1,open,D1,woody,0,,N,15,0.25
-ABC-01,2019,9,1,open,D1,herbs,0.34,,N,15,0.25
-ABC-01,2019,9,1,open,D5,grass ,23.59,,N,15,0.25
-ABC-01,2019,9,1,open,D5,woody,0,,N,15,0.25
-ABC-01,2019,9,1,open,D5,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,caged,E1,grass ,20.5,,N,15,0.25
-ABC-01,2019,9,1,caged,E1,woody,0,,N,15,0.25
-ABC-01,2019,9,1,caged,E1,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,caged,E5,grass ,41.36,,N,15,0.25
-ABC-01,2019,9,1,caged,E5,woody,0,,N,15,0.25
-ABC-01,2019,9,1,caged,E5,herbs,0,,N,15,0.25
-ABC-01,2019,9,1,open,F3,grass ,0,,N,15,0.25
-ABC-01,2019,9,1,open,F3,woody,0,,N,15,0.25
-ABC-01,2019,9,1,open,F3,herbs,0.98,,N,15,0.25
-ABC-01,2019,9,2,caged,A3,grass ,110.06,,N,15,0.25
-ABC-01,2019,9,2,caged,A3,woody,0.73,,N,15,0.25
-ABC-01,2019,9,2,caged,A3,herbs,0.36,,N,15,0.25
-ABC-01,2019,9,2,caged,A4,grass ,72.31,,N,15,0.25
-ABC-01,2019,9,2,caged,A4,woody,0,,N,15,0.25
-ABC-01,2019,9,2,caged,A4,herbs,0.37,,N,15,0.25
-ABC-01,2019,9,2,open,B1,grass ,10.86,,N,15,0.25
-ABC-01,2019,9,2,open,B1,woody,0,,N,15,0.25
-ABC-01,2019,9,2,open,B1,herbs,0,,N,15,0.25
-ABC-01,2019,9,2,open,B5,grass ,3.45,,N,15,0.25
-ABC-01,2019,9,2,open,B5,woody,0,,N,15,0.25
-ABC-01,2019,9,2,open,B5,herbs,0,,N,15,0.25
-ABC-01,2019,9,2,caged,C3,grass ,38.38,,N,15,0.25
-ABC-01,2019,9,2,caged,C3,woody,0,,N,15,0.25
-ABC-01,2019,9,2,caged,C3,herbs,0,,N,15,0.25
-ABC-01,2019,9,2,open,D1,grass ,18.8,,N,15,0.25
-ABC-01,2019,9,2,open,D1,woody,0,,N,15,0.25
-ABC-01,2019,9,2,open,D1,herbs,0.35,,N,15,0.25
-ABC-01,2019,9,2,open,D5,grass ,8.59,,N,15,0.25
-ABC-01,2019,9,2,open,D5,woody,0,,N,15,0.25
-ABC-01,2019,9,2,open,D5,herbs,0.53,,N,15,0.25
-ABC-01,2019,9,2,caged,E1,grass ,28.46,,N,15,0.25
-ABC-01,2019,9,2,caged,E1,woody,0,,N,15,0.25
-ABC-01,2019,9,2,caged,E1,herbs,0.99,,N,15,0.25
-ABC-01,2019,9,2,caged,E5,grass ,27.48,,N,15,0.25
-ABC-01,2019,9,2,caged,E5,woody,0,,N,15,0.25
-ABC-01,2019,9,2,caged,E5,herbs,0.2,,N,15,0.25
-ABC-01,2019,9,2,open,F3,grass ,1.13,,N,15,0.25
-ABC-01,2019,9,2,open,F3,woody,0,,N,15,0.25
-ABC-01,2019,9,2,open,F3,herbs,0.98,,N,15,0.25
-ABC-01,2019,9,3,caged,A3,grass ,8.44,,N,15,0.25
-ABC-01,2019,9,3,caged,A3,woody,0.19,,N,15,0.25
-ABC-01,2019,9,3,caged,A3,herbs,0.93,,N,15,0.25
-ABC-01,2019,9,3,caged,A4,grass ,29.9,,N,15,0.25
-ABC-01,2019,9,3,caged,A4,woody,0.05,,N,15,0.25
-ABC-01,2019,9,3,caged,A4,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,open,B1,grass ,4.25,,N,15,0.25
-ABC-01,2019,9,3,open,B1,woody,0,,N,15,0.25
-ABC-01,2019,9,3,open,B1,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,open,B5,grass ,18.39,,N,15,0.25
-ABC-01,2019,9,3,open,B5,woody,0.35,,N,15,0.25
-ABC-01,2019,9,3,open,B5,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,caged,C3,grass ,45.6,,N,15,0.25
-ABC-01,2019,9,3,caged,C3,woody,0,,N,15,0.25
-ABC-01,2019,9,3,caged,C3,herbs,0.09,,N,15,0.25
-ABC-01,2019,9,3,open,D1,grass ,1.17,,N,15,0.25
-ABC-01,2019,9,3,open,D1,woody,0,,N,15,0.25
-ABC-01,2019,9,3,open,D1,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,open,D5,grass ,30.01,,N,15,0.25
-ABC-01,2019,9,3,open,D5,woody,0,,N,15,0.25
-ABC-01,2019,9,3,open,D5,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,caged,E1,grass ,28.12,,N,15,0.25
-ABC-01,2019,9,3,caged,E1,woody,0,,N,15,0.25
-ABC-01,2019,9,3,caged,E1,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,caged,E5,grass ,17.13,,N,15,0.25
-ABC-01,2019,9,3,caged,E5,woody,0.21,,N,15,0.25
-ABC-01,2019,9,3,caged,E5,herbs,0,,N,15,0.25
-ABC-01,2019,9,3,open,F3,grass ,1.98,,N,15,0.25
-ABC-01,2019,9,3,open,F3,woody,0.36,,N,15,0.25
-ABC-01,2019,9,3,open,F3,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,caged,A3,grass ,17.41,,N,15,0.25
-ABC-01,2019,9,4,caged,A3,woody,0,,N,15,0.25
-ABC-01,2019,9,4,caged,A3,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,caged,A4,grass ,14.02,,N,15,0.25
-ABC-01,2019,9,4,caged,A4,woody,0,,N,15,0.25
-ABC-01,2019,9,4,caged,A4,herbs,0.06,,N,15,0.25
-ABC-01,2019,9,4,open,B1,grass ,4.42,,N,15,0.25
-ABC-01,2019,9,4,open,B1,woody,0,,N,15,0.25
-ABC-01,2019,9,4,open,B1,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,open,B5,grass ,7.53,,N,15,0.25
-ABC-01,2019,9,4,open,B5,woody,0,,N,15,0.25
-ABC-01,2019,9,4,open,B5,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,caged,C3,grass ,4.67,,N,15,0.25
-ABC-01,2019,9,4,caged,C3,woody,0.05,,N,15,0.25
-ABC-01,2019,9,4,caged,C3,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,open,D1,grass ,0.55,,N,15,0.25
-ABC-01,2019,9,4,open,D1,woody,0,,N,15,0.25
-ABC-01,2019,9,4,open,D1,herbs,0.04,,N,15,0.25
-ABC-01,2019,9,4,open,D5,grass ,2.71,,N,15,0.25
-ABC-01,2019,9,4,open,D5,woody,0,,N,15,0.25
-ABC-01,2019,9,4,open,D5,herbs,0.16,,N,15,0.25
-ABC-01,2019,9,4,caged,E1,grass ,8.29,,N,15,0.25
-ABC-01,2019,9,4,caged,E1,woody,0,,N,15,0.25
-ABC-01,2019,9,4,caged,E1,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,caged,E5,grass ,13.55,,N,15,0.25
-ABC-01,2019,9,4,caged,E5,woody,0,,N,15,0.25
-ABC-01,2019,9,4,caged,E5,herbs,0,,N,15,0.25
-ABC-01,2019,9,4,open,F3,grass ,0,,N,15,0.25
-ABC-01,2019,9,4,open,F3,woody,0,,N,15,0.25
-ABC-01,2019,9,4,open,F3,herbs,0.1,,N,15,0.25
+TMA-01,2018,12,1,caged,A1,grass,32.15,,Y,15,0.25
+TMA-01,2018,12,1,caged,A2,grass,94.98,,Y,15,0.25
+TMA-01,2018,12,1,caged,A3,grass,30.46,,Y,15,0.25
+TMA-01,2018,12,1,caged,A4,grass,55.4,,Y,15,0.25
+TMA-01,2018,12,1,caged,A5,grass,32.75,,Y,15,0.25
+TMA-01,2018,12,1,open,B1,grass,50.5,,Y,15,0.25
+TMA-01,2018,12,1,open,B2,grass,27.4,,Y,15,0.25
+TMA-01,2018,12,1,open,B3,grass,77.7,,Y,15,0.25
+TMA-01,2018,12,1,open,B4,grass,48.96,,Y,15,0.25
+TMA-01,2018,12,1,open,B5,grass,103.8,,Y,15,0.25
+TMA-01,2018,12,1,caged,C1,grass,71.4,,Y,15,0.25
+TMA-01,2018,12,1,caged,C2,grass,52.63,,Y,15,0.25
+TMA-01,2018,12,1,caged,C3,grass,53.5,,Y,15,0.25
+TMA-01,2018,12,1,caged,C4,grass,49.38,,Y,15,0.25
+TMA-01,2018,12,1,caged,C5,grass,36.14,,Y,15,0.25
+TMA-01,2018,12,1,open,D1,grass,48.59,,Y,15,0.25
+TMA-01,2018,12,1,open,D2,grass,68.07,,Y,15,0.25
+TMA-01,2018,12,1,open,D3,grass,37.71,,Y,15,0.25
+TMA-01,2018,12,1,open,D4,grass,79.61,,Y,15,0.25
+TMA-01,2018,12,1,open,D5,grass,55,,Y,15,0.25
+TMA-01,2018,12,1,caged,E1,grass,59.36,,Y,15,0.25
+TMA-01,2018,12,1,caged,E2,grass,36.1,,Y,15,0.25
+TMA-01,2018,12,1,caged,E3,grass,36.2,,Y,15,0.25
+TMA-01,2018,12,1,caged,E4,grass,56.89,,Y,15,0.25
+TMA-01,2018,12,1,caged,E5,grass,72.93,,Y,15,0.25
+TMA-01,2018,12,1,open,F1,grass,53.03,,Y,15,0.25
+TMA-01,2018,12,1,open,F2,grass,88.71,,Y,15,0.25
+TMA-01,2018,12,1,open,F3,grass,17.93,,Y,15,0.25
+TMA-01,2018,12,1,open,F4,grass,50.08,,Y,15,0.25
+TMA-01,2018,12,1,open,F5,grass,38.61,,Y,15,0.25
+CMA-01,2018,12,1,caged,A1,grass,18.32,,Y,15,0.25
+CMA-01,2018,12,1,caged,A2,grass,25.97,,Y,15,0.25
+CMA-01,2018,12,1,caged,A3,grass,40.54,,Y,15,0.25
+CMA-01,2018,12,1,caged,A4,grass,24.14,,Y,15,0.25
+CMA-01,2018,12,1,caged,A5,grass,31.93,,Y,15,0.25
+CMA-01,2018,12,1,open,B1,grass,26.71,,Y,15,0.25
+CMA-01,2018,12,1,open,B2,grass,51.5,,Y,15,0.25
+CMA-01,2018,12,1,open,B3,grass,66.4,,Y,15,0.25
+CMA-01,2018,12,1,open,B4,grass,113.4,,Y,15,0.25
+CMA-01,2018,12,1,open,B5,grass,23.96,,Y,15,0.25
+CMA-01,2018,12,1,caged,C1,grass,47.8,,Y,15,0.25
+CMA-01,2018,12,1,caged,C2,grass,30.66,,Y,15,0.25
+CMA-01,2018,12,1,caged,C3,grass,37.65,,Y,15,0.25
+CMA-01,2018,12,1,caged,C4,grass,69.7,,Y,15,0.25
+CMA-01,2018,12,1,caged,C5,grass,103.05,,Y,15,0.25
+CMA-01,2018,12,1,open,D1,grass,20.58,,Y,15,0.25
+CMA-01,2018,12,1,open,D2,grass,57.95,,Y,15,0.25
+CMA-01,2018,12,1,open,D3,grass,40.17,,Y,15,0.25
+CMA-01,2018,12,1,open,D4,grass,17.71,,Y,15,0.25
+CMA-01,2018,12,1,open,D5,grass,24.55,,Y,15,0.25
+CMA-01,2018,12,1,caged,E1,grass,124.58,,Y,15,0.25
+CMA-01,2018,12,1,caged,E2,grass,85.81,,Y,15,0.25
+CMA-01,2018,12,1,caged,E3,grass,53.21,,Y,15,0.25
+CMA-01,2018,12,1,caged,E4,grass,61.6,,Y,15,0.25
+CMA-01,2018,12,1,caged,E5,grass,92.82,,Y,15,0.25
+CMA-01,2018,12,1,open,F1,grass,50.6,,Y,15,0.25
+CMA-01,2018,12,1,open,F2,grass,30.12,,Y,15,0.25
+CMA-01,2018,12,1,open,F3,grass,43.85,,Y,15,0.25
+CMA-01,2018,12,1,open,F4,grass,59.04,,Y,15,0.25
+CMA-01,2018,12,1,open,F5,grass,46.22,,Y,15,0.25
+RMA-01,2018,12,1,caged,A1,grass,34.73,,Y,15,0.25
+RMA-01,2018,12,1,caged,A2,grass,34.25,,Y,15,0.25
+RMA-01,2018,12,1,caged,A3,grass,34.63,,Y,15,0.25
+RMA-01,2018,12,1,caged,A4,grass,33.07,,Y,15,0.25
+RMA-01,2018,12,1,caged,A5,grass,23.36,,Y,15,0.25
+RMA-01,2018,12,1,open,B1,grass,36.55,,Y,15,0.25
+RMA-01,2018,12,1,open,B2,grass,38.81,,Y,15,0.25
+RMA-01,2018,12,1,open,B3,grass,99.47,,Y,15,0.25
+RMA-01,2018,12,1,open,B4,grass,34.15,,Y,15,0.25
+RMA-01,2018,12,1,open,B5,grass,96.13,,Y,15,0.25
+RMA-01,2018,12,1,caged,C1,grass,31.64,,Y,15,0.25
+RMA-01,2018,12,1,caged,C2,grass,26.12,,Y,15,0.25
+RMA-01,2018,12,1,caged,C3,grass,61.05,,Y,15,0.25
+RMA-01,2018,12,1,caged,C4,grass,46.83,,Y,15,0.25
+RMA-01,2018,12,1,caged,C5,grass,22.24,,Y,15,0.25
+RMA-01,2018,12,1,open,D1,grass,32.9,,Y,15,0.25
+RMA-01,2018,12,1,open,D2,grass,64.5,,Y,15,0.25
+RMA-01,2018,12,1,open,D3,grass,90.35,,Y,15,0.25
+RMA-01,2018,12,1,open,D4,grass,75.26,,Y,15,0.25
+RMA-01,2018,12,1,open,D5,grass,89.45,,Y,15,0.25
+RMA-01,2018,12,1,caged,E1,grass,59.32,,Y,15,0.25
+RMA-01,2018,12,1,caged,E2,grass,26.52,,Y,15,0.25
+RMA-01,2018,12,1,caged,E3,grass,21.14,,Y,15,0.25
+RMA-01,2018,12,1,caged,E4,grass,27.48,,Y,15,0.25
+RMA-01,2018,12,1,caged,E5,grass,27.18,,Y,15,0.25
+RMA-01,2018,12,1,open,F1,grass,23.24,,Y,15,0.25
+RMA-01,2018,12,1,open,F2,grass,37.55,,Y,15,0.25
+RMA-01,2018,12,1,open,F3,grass,26.06,,Y,15,0.25
+RMA-01,2018,12,1,open,F4,grass,26.64,,Y,15,0.25
+RMA-01,2018,12,1,open,F5,grass,44.23,,Y,15,0.25
+PMA-01,2018,12,1,caged,A1,grass,26.81,,Y,15,0.25
+PMA-01,2018,12,1,caged,A2,grass,53.74,,Y,15,0.25
+PMA-01,2018,12,1,caged,A3,grass,22.53,,Y,15,0.25
+PMA-01,2018,12,1,caged,A4,grass,26.24,,Y,15,0.25
+PMA-01,2018,12,1,caged,A5,grass,58.4,,Y,15,0.25
+PMA-01,2018,12,1,open,B1,grass,26.1,,Y,15,0.25
+PMA-01,2018,12,1,open,B2,grass,43.12,,Y,15,0.25
+PMA-01,2018,12,1,open,B3,grass,40.5,,Y,15,0.25
+PMA-01,2018,12,1,open,B4,grass,19.96,,Y,15,0.25
+PMA-01,2018,12,1,open,B5,grass,25.09,,Y,15,0.25
+PMA-01,2018,12,1,caged,C1,grass,42.67,,Y,15,0.25
+PMA-01,2018,12,1,caged,C2,grass,72.85,,Y,15,0.25
+PMA-01,2018,12,1,caged,C3,grass,0,on mound,Y,15,0.25
+PMA-01,2018,12,1,caged,C4,grass,27.74,,Y,15,0.25
+PMA-01,2018,12,1,caged,C5,grass,52.6,,Y,15,0.25
+PMA-01,2018,12,1,open,D1,grass,23.32,,Y,15,0.25
+PMA-01,2018,12,1,open,D2,grass,51.6,,Y,15,0.25
+PMA-01,2018,12,1,open,D3,grass,18.54,,Y,15,0.25
+PMA-01,2018,12,1,open,D4,grass,21.43,,Y,15,0.25
+PMA-01,2018,12,1,open,D5,grass,20.44,,Y,15,0.25
+PMA-01,2018,12,1,caged,E1,grass,35,,Y,15,0.25
+PMA-01,2018,12,1,caged,E2,grass,34.64,,Y,15,0.25
+PMA-01,2018,12,1,caged,E3,grass,49.56,,Y,15,0.25
+PMA-01,2018,12,1,caged,E4,grass,28.35,,Y,15,0.25
+PMA-01,2018,12,1,caged,E5,grass,38.18,,Y,15,0.25
+PMA-01,2018,12,1,open,F1,grass,88.61,,Y,15,0.25
+PMA-01,2018,12,1,open,F2,grass,31.32,,Y,15,0.25
+PMA-01,2018,12,1,open,F3,grass,24.06,,Y,15,0.25
+PMA-01,2018,12,1,open,F4,grass,15.65,,Y,15,0.25
+PMA-01,2018,12,1,open,F5,grass,19.63,,Y,15,0.25
+TMA-01,2019,3,1,caged,A1,grass ,0.92,,N,15,0.25
+TMA-01,2019,3,1,caged,A1,woody,0,,N,15,0.25
+TMA-01,2019,3,1,caged,A1,herbs,0.06,,N,15,0.25
+TMA-01,2019,3,1,caged,A5,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,caged,A5,woody,0,,N,15,0.25
+TMA-01,2019,3,1,caged,A5,herbs,0.8,,N,15,0.25
+TMA-01,2019,3,1,open,B3,grass ,44.57,,N,15,0.25
+TMA-01,2019,3,1,open,B3,woody,0,,N,15,0.25
+TMA-01,2019,3,1,open,B3,herbs,1.73,,N,15,0.25
+TMA-01,2019,3,1,caged,C2,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,caged,C2,woody,2.17,,N,15,0.25
+TMA-01,2019,3,1,caged,C2,herbs,0,,N,15,0.25
+TMA-01,2019,3,1,caged,C4,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,caged,C4,woody,0,,N,15,0.25
+TMA-01,2019,3,1,caged,C4,herbs,0,,N,15,0.25
+TMA-01,2019,3,1,open,D2,grass ,5.65,,N,15,0.25
+TMA-01,2019,3,1,open,D2,woody,0,,N,15,0.25
+TMA-01,2019,3,1,open,D2,herbs,0,,N,15,0.25
+TMA-01,2019,3,1,open,D4,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,open,D4,woody,0,,N,15,0.25
+TMA-01,2019,3,1,open,D4,herbs,0.65,,N,15,0.25
+TMA-01,2019,3,1,caged,E3,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,caged,E3,woody,2.88,,N,15,0.25
+TMA-01,2019,3,1,caged,E3,herbs,0,,N,15,0.25
+TMA-01,2019,3,1,open,F1,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,open,F1,woody,0,,N,15,0.25
+TMA-01,2019,3,1,open,F1,herbs,0,,N,15,0.25
+TMA-01,2019,3,1,open,F5,grass ,0,,N,15,0.25
+TMA-01,2019,3,1,open,F5,woody,0,,N,15,0.25
+TMA-01,2019,3,1,open,F5,herbs,0,,N,15,0.25
+CMA-01,2019,3,1,caged,A1,grass ,27.19,,N,15,0.25
+CMA-01,2019,3,1,caged,A1,woody,0,,N,15,0.25
+CMA-01,2019,3,1,caged,A1,herbs,10.79,,N,15,0.25
+CMA-01,2019,3,1,caged,A5,grass ,15.75,,N,15,0.25
+CMA-01,2019,3,1,caged,A5,woody,8.79,,N,15,0.25
+CMA-01,2019,3,1,caged,A5,herbs,0,,N,15,0.25
+CMA-01,2019,3,1,open,B3,grass ,33.67,,N,15,0.25
+CMA-01,2019,3,1,open,B3,woody,0,,N,15,0.25
+CMA-01,2019,3,1,open,B3,herbs,7.98,,N,15,0.25
+CMA-01,2019,3,1,caged,C2,grass ,22.74,,N,15,0.25
+CMA-01,2019,3,1,caged,C2,woody,0,,N,15,0.25
+CMA-01,2019,3,1,caged,C2,herbs,4.84,,N,15,0.25
+CMA-01,2019,3,1,caged,C4,grass ,23.35,,N,15,0.25
+CMA-01,2019,3,1,caged,C4,woody,0,,N,15,0.25
+CMA-01,2019,3,1,caged,C4,herbs,17.16,,N,15,0.25
+CMA-01,2019,3,1,open,D2,grass ,4.21,,N,15,0.25
+CMA-01,2019,3,1,open,D2,woody,0,,N,15,0.25
+CMA-01,2019,3,1,open,D2,herbs,3.19,,N,15,0.25
+CMA-01,2019,3,1,open,D4,grass ,20.2,,N,15,0.25
+CMA-01,2019,3,1,open,D4,woody,0,,N,15,0.25
+CMA-01,2019,3,1,open,D4,herbs,1.28,,N,15,0.25
+CMA-01,2019,3,1,caged,E3,grass ,2.7,,N,15,0.25
+CMA-01,2019,3,1,caged,E3,woody,0,,N,15,0.25
+CMA-01,2019,3,1,caged,E3,herbs,12.05,,N,15,0.25
+CMA-01,2019,3,1,open,F1,grass ,45.71,,N,15,0.25
+CMA-01,2019,3,1,open,F1,woody,0,,N,15,0.25
+CMA-01,2019,3,1,open,F1,herbs,4.02,,N,15,0.25
+CMA-01,2019,3,1,open,F5,grass ,7.66,,N,15,0.25
+CMA-01,2019,3,1,open,F5,woody,0,,N,15,0.25
+CMA-01,2019,3,1,open,F5,herbs,7,,N,15,0.25
+RMA-01,2019,3,1,caged,A1,grass ,40.54,,N,15,0.25
+RMA-01,2019,3,1,caged,A1,woody,0,,N,15,0.25
+RMA-01,2019,3,1,caged,A1,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,caged,A5,grass ,37.94,,N,15,0.25
+RMA-01,2019,3,1,caged,A5,woody,0,,N,15,0.25
+RMA-01,2019,3,1,caged,A5,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,open,B3,grass ,50.36,,N,15,0.25
+RMA-01,2019,3,1,open,B3,woody,0,,N,15,0.25
+RMA-01,2019,3,1,open,B3,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,caged,C2,grass ,40.44,,N,15,0.25
+RMA-01,2019,3,1,caged,C2,woody,0,,N,15,0.25
+RMA-01,2019,3,1,caged,C2,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,caged,C4,grass ,21.79,,N,15,0.25
+RMA-01,2019,3,1,caged,C4,woody,0,,N,15,0.25
+RMA-01,2019,3,1,caged,C4,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,open,D2,grass ,31.96,,N,15,0.25
+RMA-01,2019,3,1,open,D2,woody,0,,N,15,0.25
+RMA-01,2019,3,1,open,D2,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,open,D4,grass ,0,,N,15,0.25
+RMA-01,2019,3,1,open,D4,woody,0,,N,15,0.25
+RMA-01,2019,3,1,open,D4,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,caged,E3,grass ,0,,N,15,0.25
+RMA-01,2019,3,1,caged,E3,woody,0,,N,15,0.25
+RMA-01,2019,3,1,caged,E3,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,open,F1,grass ,0,,N,15,0.25
+RMA-01,2019,3,1,open,F1,woody,0,,N,15,0.25
+RMA-01,2019,3,1,open,F1,herbs,0,,N,15,0.25
+RMA-01,2019,3,1,open,F5,grass ,0,,N,15,0.25
+RMA-01,2019,3,1,open,F5,woody,0,,N,15,0.25
+RMA-01,2019,3,1,open,F5,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,caged,A1,grass ,0,,N,15,0.25
+PMA-01,2019,3,1,caged,A1,woody,0,,N,15,0.25
+PMA-01,2019,3,1,caged,A1,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,caged,A5,grass ,0,,N,15,0.25
+PMA-01,2019,3,1,caged,A5,woody,0,,N,15,0.25
+PMA-01,2019,3,1,caged,A5,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,open,B3,grass ,0,,N,15,0.25
+PMA-01,2019,3,1,open,B3,woody,0,,N,15,0.25
+PMA-01,2019,3,1,open,B3,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,caged,C2,grass ,0,,N,15,0.25
+PMA-01,2019,3,1,caged,C2,woody,0,,N,15,0.25
+PMA-01,2019,3,1,caged,C2,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,caged,C4,grass ,0,,N,15,0.25
+PMA-01,2019,3,1,caged,C4,woody,0,,N,15,0.25
+PMA-01,2019,3,1,caged,C4,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,open,D2,grass ,15.75,,N,15,0.25
+PMA-01,2019,3,1,open,D2,woody,0,,N,15,0.25
+PMA-01,2019,3,1,open,D2,herbs,0.11,,N,15,0.25
+PMA-01,2019,3,1,open,D4,grass ,0,,N,15,0.25
+PMA-01,2019,3,1,open,D4,woody,0,,N,15,0.25
+PMA-01,2019,3,1,open,D4,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,caged,E3,grass ,44.04,,N,15,0.25
+PMA-01,2019,3,1,caged,E3,woody,0,,N,15,0.25
+PMA-01,2019,3,1,caged,E3,herbs,0.33,,N,15,0.25
+PMA-01,2019,3,1,open,F1,grass ,19.24,,N,15,0.25
+PMA-01,2019,3,1,open,F1,woody,0,,N,15,0.25
+PMA-01,2019,3,1,open,F1,herbs,0,,N,15,0.25
+PMA-01,2019,3,1,open,F5,grass ,3.06,,N,15,0.25
+PMA-01,2019,3,1,open,F5,woody,0,,N,15,0.25
+PMA-01,2019,3,1,open,F5,herbs,0.33,,N,15,0.25
+TMA-01,2019,7,1,caged,A2,grass ,50.36,,N,15,0.25
+TMA-01,2019,7,1,caged,A2,woody,1.1,,N,15,0.25
+TMA-01,2019,7,1,caged,A2,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,open,B2,grass ,8.57,,N,15,0.25
+TMA-01,2019,7,1,open,B2,woody,0.05,,N,15,0.25
+TMA-01,2019,7,1,open,B2,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,open,B4,grass ,16.43,,N,15,0.25
+TMA-01,2019,7,1,open,B4,woody,0,,N,15,0.25
+TMA-01,2019,7,1,open,B4,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,caged,C1,grass ,31.17,,N,15,0.25
+TMA-01,2019,7,1,caged,C1,woody,0,,N,15,0.25
+TMA-01,2019,7,1,caged,C1,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,caged,C5,grass ,25.97,,N,15,0.25
+TMA-01,2019,7,1,caged,C5,woody,0.22,,N,15,0.25
+TMA-01,2019,7,1,caged,C5,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,open,D3,grass ,17.68,,N,15,0.25
+TMA-01,2019,7,1,open,D3,woody,1.78,,N,15,0.25
+TMA-01,2019,7,1,open,D3,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,caged,E2,grass ,33.89,,N,15,0.25
+TMA-01,2019,7,1,caged,E2,woody,0.12,,N,15,0.25
+TMA-01,2019,7,1,caged,E2,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,caged,E4,grass ,29.76,,N,15,0.25
+TMA-01,2019,7,1,caged,E4,woody,0.3,,N,15,0.25
+TMA-01,2019,7,1,caged,E4,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,open,F1,grass ,1.56,,N,15,0.25
+TMA-01,2019,7,1,open,F1,woody,0,,N,15,0.25
+TMA-01,2019,7,1,open,F1,herbs,0,,N,15,0.25
+TMA-01,2019,7,1,open,F5,grass ,0,,N,15,0.25
+TMA-01,2019,7,1,open,F5,woody,0,,N,15,0.25
+TMA-01,2019,7,1,open,F5,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,caged,A2,grass ,0,,N,15,0.25
+CMA-01,2019,7,1,caged,A2,woody,0.05,,N,15,0.25
+CMA-01,2019,7,1,caged,A2,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,open,B2,grass ,15.48,,N,15,0.25
+CMA-01,2019,7,1,open,B2,woody,8.11,,N,15,0.25
+CMA-01,2019,7,1,open,B2,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,open,B4,grass ,35.47,,N,15,0.25
+CMA-01,2019,7,1,open,B4,woody,0,,N,15,0.25
+CMA-01,2019,7,1,open,B4,herbs,1.16,,N,15,0.25
+CMA-01,2019,7,1,caged,C1,grass ,74.59,,N,15,0.25
+CMA-01,2019,7,1,caged,C1,woody,0,,N,15,0.25
+CMA-01,2019,7,1,caged,C1,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,caged,C5,grass ,0,,N,15,0.25
+CMA-01,2019,7,1,caged,C5,woody,0.22,,N,15,0.25
+CMA-01,2019,7,1,caged,C5,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,open,D3,grass ,11.08,,N,15,0.25
+CMA-01,2019,7,1,open,D3,woody,2.36,,N,15,0.25
+CMA-01,2019,7,1,open,D3,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,caged,E2,grass ,27.19,,N,15,0.25
+CMA-01,2019,7,1,caged,E2,woody,0,,N,15,0.25
+CMA-01,2019,7,1,caged,E2,herbs,4.01,,N,15,0.25
+CMA-01,2019,7,1,caged,E4,grass ,11.24,,N,15,0.25
+CMA-01,2019,7,1,caged,E4,woody,1.71,,N,15,0.25
+CMA-01,2019,7,1,caged,E4,herbs,0,,N,15,0.25
+CMA-01,2019,7,1,open,F1,grass ,10.48,,N,15,0.25
+CMA-01,2019,7,1,open,F1,woody,0,,N,15,0.25
+CMA-01,2019,7,1,open,F1,herbs,0.06,,N,15,0.25
+CMA-01,2019,7,1,open,F5,grass ,0.89,,N,15,0.25
+CMA-01,2019,7,1,open,F5,woody,0,,N,15,0.25
+CMA-01,2019,7,1,open,F5,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,caged,A2,grass ,17.5,,N,15,0.25
+RMA-01,2019,7,1,caged,A2,woody,0.25,,N,15,0.25
+RMA-01,2019,7,1,caged,A2,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,open,B2,grass ,2.44,,N,15,0.25
+RMA-01,2019,7,1,open,B2,woody,0,,N,15,0.25
+RMA-01,2019,7,1,open,B2,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,open,B4,grass ,7.84,,N,15,0.25
+RMA-01,2019,7,1,open,B4,woody,0,,N,15,0.25
+RMA-01,2019,7,1,open,B4,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,caged,C1,grass ,22.76,,N,15,0.25
+RMA-01,2019,7,1,caged,C1,woody,0.26,,N,15,0.25
+RMA-01,2019,7,1,caged,C1,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,caged,C5,grass ,6.13,,N,15,0.25
+RMA-01,2019,7,1,caged,C5,woody,18.68,,N,15,0.25
+RMA-01,2019,7,1,caged,C5,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,open,D3,grass ,7.08,,N,15,0.25
+RMA-01,2019,7,1,open,D3,woody,0,,N,15,0.25
+RMA-01,2019,7,1,open,D3,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,caged,E2,grass ,9.53,,N,15,0.25
+RMA-01,2019,7,1,caged,E2,woody,0.7,,N,15,0.25
+RMA-01,2019,7,1,caged,E2,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,caged,E4,grass ,39.93,,N,15,0.25
+RMA-01,2019,7,1,caged,E4,woody,0.37,,N,15,0.25
+RMA-01,2019,7,1,caged,E4,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,open,F1,grass ,0.18,,N,15,0.25
+RMA-01,2019,7,1,open,F1,woody,0,,N,15,0.25
+RMA-01,2019,7,1,open,F1,herbs,0,,N,15,0.25
+RMA-01,2019,7,1,open,F5,grass ,0.33,,N,15,0.25
+RMA-01,2019,7,1,open,F5,woody,0,,N,15,0.25
+RMA-01,2019,7,1,open,F5,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,caged,A2,grass ,25.41,,N,15,0.25
+PMA-01,2019,7,1,caged,A2,woody,0.08,,N,15,0.25
+PMA-01,2019,7,1,caged,A2,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,open,B2,grass ,26.18,,N,15,0.25
+PMA-01,2019,7,1,open,B2,woody,0.71,,N,15,0.25
+PMA-01,2019,7,1,open,B2,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,open,B4,grass ,6.99,,N,15,0.25
+PMA-01,2019,7,1,open,B4,woody,0.76,,N,15,0.25
+PMA-01,2019,7,1,open,B4,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,caged,C1,grass ,29.93,,N,15,0.25
+PMA-01,2019,7,1,caged,C1,woody,0.17,,N,15,0.25
+PMA-01,2019,7,1,caged,C1,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,caged,C5,grass ,26.07,,N,15,0.25
+PMA-01,2019,7,1,caged,C5,woody,0.54,,N,15,0.25
+PMA-01,2019,7,1,caged,C5,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,open,D3,grass ,60.77,,N,15,0.25
+PMA-01,2019,7,1,open,D3,woody,1.55,,N,15,0.25
+PMA-01,2019,7,1,open,D3,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,caged,E2,grass ,26.32,,N,15,0.25
+PMA-01,2019,7,1,caged,E2,woody,0.08,,N,15,0.25
+PMA-01,2019,7,1,caged,E2,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,caged,E4,grass ,14.09,,N,15,0.25
+PMA-01,2019,7,1,caged,E4,woody,1.81,,N,15,0.25
+PMA-01,2019,7,1,caged,E4,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,open,F1,grass ,12.3,,N,15,0.25
+PMA-01,2019,7,1,open,F1,woody,4.05,,N,15,0.25
+PMA-01,2019,7,1,open,F1,herbs,0,,N,15,0.25
+PMA-01,2019,7,1,open,F5,grass ,0,,N,15,0.25
+PMA-01,2019,7,1,open,F5,woody,0,,N,15,0.25
+PMA-01,2019,7,1,open,F5,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,caged,A3,grass ,67.86,,N,15,0.25
+TMA-01,2019,9,1,caged,A3,woody,0,,N,15,0.25
+TMA-01,2019,9,1,caged,A3,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,caged,A4,grass ,31.5,,N,15,0.25
+TMA-01,2019,9,1,caged,A4,woody,0,,N,15,0.25
+TMA-01,2019,9,1,caged,A4,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,open,B1,grass ,13.45,,N,15,0.25
+TMA-01,2019,9,1,open,B1,woody,0,,N,15,0.25
+TMA-01,2019,9,1,open,B1,herbs,0.05,,N,15,0.25
+TMA-01,2019,9,1,open,B5,grass ,59.47,,N,15,0.25
+TMA-01,2019,9,1,open,B5,woody,0,,N,15,0.25
+TMA-01,2019,9,1,open,B5,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,caged,C3,grass ,73.63,,N,15,0.25
+TMA-01,2019,9,1,caged,C3,woody,0,,N,15,0.25
+TMA-01,2019,9,1,caged,C3,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,open,D1,grass ,20.39,,N,15,0.25
+TMA-01,2019,9,1,open,D1,woody,0,,N,15,0.25
+TMA-01,2019,9,1,open,D1,herbs,0.34,,N,15,0.25
+TMA-01,2019,9,1,open,D5,grass ,23.59,,N,15,0.25
+TMA-01,2019,9,1,open,D5,woody,0,,N,15,0.25
+TMA-01,2019,9,1,open,D5,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,caged,E1,grass ,20.5,,N,15,0.25
+TMA-01,2019,9,1,caged,E1,woody,0,,N,15,0.25
+TMA-01,2019,9,1,caged,E1,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,caged,E5,grass ,41.36,,N,15,0.25
+TMA-01,2019,9,1,caged,E5,woody,0,,N,15,0.25
+TMA-01,2019,9,1,caged,E5,herbs,0,,N,15,0.25
+TMA-01,2019,9,1,open,F3,grass ,0,,N,15,0.25
+TMA-01,2019,9,1,open,F3,woody,0,,N,15,0.25
+TMA-01,2019,9,1,open,F3,herbs,0.98,,N,15,0.25
+CMA-01,2019,9,1,caged,A3,grass ,110.06,,N,15,0.25
+CMA-01,2019,9,1,caged,A3,woody,0.73,,N,15,0.25
+CMA-01,2019,9,1,caged,A3,herbs,0.36,,N,15,0.25
+CMA-01,2019,9,1,caged,A4,grass ,72.31,,N,15,0.25
+CMA-01,2019,9,1,caged,A4,woody,0,,N,15,0.25
+CMA-01,2019,9,1,caged,A4,herbs,0.37,,N,15,0.25
+CMA-01,2019,9,1,open,B1,grass ,10.86,,N,15,0.25
+CMA-01,2019,9,1,open,B1,woody,0,,N,15,0.25
+CMA-01,2019,9,1,open,B1,herbs,0,,N,15,0.25
+CMA-01,2019,9,1,open,B5,grass ,3.45,,N,15,0.25
+CMA-01,2019,9,1,open,B5,woody,0,,N,15,0.25
+CMA-01,2019,9,1,open,B5,herbs,0,,N,15,0.25
+CMA-01,2019,9,1,caged,C3,grass ,38.38,,N,15,0.25
+CMA-01,2019,9,1,caged,C3,woody,0,,N,15,0.25
+CMA-01,2019,9,1,caged,C3,herbs,0,,N,15,0.25
+CMA-01,2019,9,1,open,D1,grass ,18.8,,N,15,0.25
+CMA-01,2019,9,1,open,D1,woody,0,,N,15,0.25
+CMA-01,2019,9,1,open,D1,herbs,0.35,,N,15,0.25
+CMA-01,2019,9,1,open,D5,grass ,8.59,,N,15,0.25
+CMA-01,2019,9,1,open,D5,woody,0,,N,15,0.25
+CMA-01,2019,9,1,open,D5,herbs,0.53,,N,15,0.25
+CMA-01,2019,9,1,caged,E1,grass ,28.46,,N,15,0.25
+CMA-01,2019,9,1,caged,E1,woody,0,,N,15,0.25
+CMA-01,2019,9,1,caged,E1,herbs,0.99,,N,15,0.25
+CMA-01,2019,9,1,caged,E5,grass ,27.48,,N,15,0.25
+CMA-01,2019,9,1,caged,E5,woody,0,,N,15,0.25
+CMA-01,2019,9,1,caged,E5,herbs,0.2,,N,15,0.25
+CMA-01,2019,9,1,open,F3,grass ,1.13,,N,15,0.25
+CMA-01,2019,9,1,open,F3,woody,0,,N,15,0.25
+CMA-01,2019,9,1,open,F3,herbs,0.98,,N,15,0.25
+RMA-01,2019,9,1,caged,A3,grass ,8.44,,N,15,0.25
+RMA-01,2019,9,1,caged,A3,woody,0.19,,N,15,0.25
+RMA-01,2019,9,1,caged,A3,herbs,0.93,,N,15,0.25
+RMA-01,2019,9,1,caged,A4,grass ,29.9,,N,15,0.25
+RMA-01,2019,9,1,caged,A4,woody,0.05,,N,15,0.25
+RMA-01,2019,9,1,caged,A4,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,open,B1,grass ,4.25,,N,15,0.25
+RMA-01,2019,9,1,open,B1,woody,0,,N,15,0.25
+RMA-01,2019,9,1,open,B1,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,open,B5,grass ,18.39,,N,15,0.25
+RMA-01,2019,9,1,open,B5,woody,0.35,,N,15,0.25
+RMA-01,2019,9,1,open,B5,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,caged,C3,grass ,45.6,,N,15,0.25
+RMA-01,2019,9,1,caged,C3,woody,0,,N,15,0.25
+RMA-01,2019,9,1,caged,C3,herbs,0.09,,N,15,0.25
+RMA-01,2019,9,1,open,D1,grass ,1.17,,N,15,0.25
+RMA-01,2019,9,1,open,D1,woody,0,,N,15,0.25
+RMA-01,2019,9,1,open,D1,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,open,D5,grass ,30.01,,N,15,0.25
+RMA-01,2019,9,1,open,D5,woody,0,,N,15,0.25
+RMA-01,2019,9,1,open,D5,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,caged,E1,grass ,28.12,,N,15,0.25
+RMA-01,2019,9,1,caged,E1,woody,0,,N,15,0.25
+RMA-01,2019,9,1,caged,E1,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,caged,E5,grass ,17.13,,N,15,0.25
+RMA-01,2019,9,1,caged,E5,woody,0.21,,N,15,0.25
+RMA-01,2019,9,1,caged,E5,herbs,0,,N,15,0.25
+RMA-01,2019,9,1,open,F3,grass ,1.98,,N,15,0.25
+RMA-01,2019,9,1,open,F3,woody,0.36,,N,15,0.25
+RMA-01,2019,9,1,open,F3,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,caged,A3,grass ,17.41,,N,15,0.25
+PMA-01,2019,9,1,caged,A3,woody,0,,N,15,0.25
+PMA-01,2019,9,1,caged,A3,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,caged,A4,grass ,14.02,,N,15,0.25
+PMA-01,2019,9,1,caged,A4,woody,0,,N,15,0.25
+PMA-01,2019,9,1,caged,A4,herbs,0.06,,N,15,0.25
+PMA-01,2019,9,1,open,B1,grass ,4.42,,N,15,0.25
+PMA-01,2019,9,1,open,B1,woody,0,,N,15,0.25
+PMA-01,2019,9,1,open,B1,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,open,B5,grass ,7.53,,N,15,0.25
+PMA-01,2019,9,1,open,B5,woody,0,,N,15,0.25
+PMA-01,2019,9,1,open,B5,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,caged,C3,grass ,4.67,,N,15,0.25
+PMA-01,2019,9,1,caged,C3,woody,0.05,,N,15,0.25
+PMA-01,2019,9,1,caged,C3,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,open,D1,grass ,0.55,,N,15,0.25
+PMA-01,2019,9,1,open,D1,woody,0,,N,15,0.25
+PMA-01,2019,9,1,open,D1,herbs,0.04,,N,15,0.25
+PMA-01,2019,9,1,open,D5,grass ,2.71,,N,15,0.25
+PMA-01,2019,9,1,open,D5,woody,0,,N,15,0.25
+PMA-01,2019,9,1,open,D5,herbs,0.16,,N,15,0.25
+PMA-01,2019,9,1,caged,E1,grass ,8.29,,N,15,0.25
+PMA-01,2019,9,1,caged,E1,woody,0,,N,15,0.25
+PMA-01,2019,9,1,caged,E1,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,caged,E5,grass ,13.55,,N,15,0.25
+PMA-01,2019,9,1,caged,E5,woody,0,,N,15,0.25
+PMA-01,2019,9,1,caged,E5,herbs,0,,N,15,0.25
+PMA-01,2019,9,1,open,F3,grass ,0,,N,15,0.25
+PMA-01,2019,9,1,open,F3,woody,0,,N,15,0.25
+PMA-01,2019,9,1,open,F3,herbs,0.1,,N,15,0.25

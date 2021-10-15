@@ -53,9 +53,21 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~
 
 
-1. To calculate days_between (if you opt to), This script removed the record of days, because it assumes that you did not collect data twice for the same quadrat in a month. It also assume that, for each month with data recorded, you collected all the quadrats in that month. 
-
-2. Therefore, if there is no grass in a given quadrat, you should still record it with dry mass as 0, if you lost data of a month, you need to put NA as dry mass and put in correct date. So that the calculation of daysbetween would be correct
+#...............................................................................
+#                                                                              .
+#  if there is no grass in a given quadrat, you should still record it with    .
+#  dry mass as 0, if you lost data of a month, you need to put NA as dry mass  .
+#  and put in correct date. So that the calculation of daysbetween would be    .
+#  correct                                                                     .
+#                                                                              .
+#  If you say FALSE to Days_interval_recorded, you must run one plot at a      .
+#  time, if you say TRUE, you can run all plot in one go                       .
+#                                                                              .
+#  You should mannually check daysBetween, make sure there are no value like   .
+#  1 (1 day between collection is not possible) or 378 (in case you stop your  .
+#  experiment for a year)                                                      .
+#                                                                              .
+#...............................................................................
 
 
 
@@ -97,6 +109,7 @@ census$Treatment_code <- as.factor(census$Treatment_code)
 census$quadrat_num <- as.factor(census$quadrat_num)
 census$Plants_type <- as.factor(census$Plants_type)
 census$quadrat_area_m2 <- as.numeric(census$quadrat_area_m2)
+
 ##~~~~~~~~~~~~~~~~~~~~~
 ##···your options  ----
 ##~~~~~~~~~~~~~~~~~~~~~
@@ -106,7 +119,7 @@ census$quadrat_area_m2 <- as.numeric(census$quadrat_area_m2)
 Days_interval_recorded = FALSE
 
 #  say True, if you have a column census$DaysBetween, unit in days,
-#  say FALSE if you want this script to calculate DaysBetween based on your 
+#  say FALSE if you want this script to calculate DaysBetween based on your
 #  year month day
 
 
@@ -116,8 +129,6 @@ Days_interval_recorded = FALSE
 #  NPP is calculated as roots_weight/days_interval
 
 
-
-
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                      4. Calculate days_between and NPP                   ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,11 +136,8 @@ Days_interval_recorded = FALSE
 
 
 if (!Days_interval_recorded) {
-  
+
   All_npp<-census%>%
-      mutate(day=15)%>%
-  # see important note above to understand why we change all days to 15
-  
     mutate(date=parse_date_time(paste(year,month,day),"ymd"))%>%
     # make a date series
    mutate(DaysBetween=get_time_diffs2(date))%>%
@@ -138,7 +146,7 @@ if (!Days_interval_recorded) {
    #Then, we could get a days interval
    # pls check that it got days between correctly
    message('I got days_between from your date, Pls check this:')
-   distinct(GRASSSSS[,c('DaysBetween','date')])
+   distinct(All_npp[,c('DaysBetween','date')])
 }else{
   All_npp<-census%>%
     filter(is_stock=='N')%>%
@@ -197,9 +205,11 @@ Per_quadrat_npp <- All_npp %>%
   group_by_at((my_unique_quadrat_id) )%>%
   summarise(npp_MgC_ha_year_sum = sum(npp_MgC_ha_year,na.rm=T))
 # The above sum will add all plant types together, basically sum everthing we have in each quadrats
-ggplot(Per_quadrat_npp, aes(x=Treatment_code, y=npp_MgC_ha_year_sum)) + 
+ggplot(Per_quadrat_npp, aes(x=Treatment_code, y=npp_MgC_ha_year_sum)) +
   geom_boxplot(alpha=0.3) +
   theme_bw()
+
+ggsave(filename =paste0(plot_name,"_box_plot.png") )
 
 Per_date_npp <- All_npp %>%
   group_by_at((my_unique_quadrat_id) )%>%
@@ -214,14 +224,14 @@ Per_date_npp <- All_npp %>%
 # You will need weighted average if you want to average across date
 # You will need weighted average if you want to average across date
 
-p <- ggplot(Per_date_npp, aes(x=factor(date), y=npp_MgC_ha_year_mean, fill=factor(Treatment_code))) + 
+p <- ggplot(Per_date_npp, aes(x=factor(date), y=npp_MgC_ha_year_mean, fill=factor(Treatment_code))) +
   geom_bar(stat="identity", position=position_dodge(.9)) +
   geom_errorbar(aes(ymin=npp_MgC_ha_year_mean-ste, ymax=npp_MgC_ha_year_mean+ste), width=.2,
                 position=position_dodge(.9))
 # Finished bar plot
 p+theme_classic() +
   scale_fill_manual(values=c('#999999','#E69F00'))
-
+ggsave(filename =paste0(plot_name,"_bar_plot.png") )
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                           8. Archived information                        ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

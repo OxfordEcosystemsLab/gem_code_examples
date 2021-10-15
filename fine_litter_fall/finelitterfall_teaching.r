@@ -25,9 +25,18 @@
 ##  ~ important_note  ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~
 
-# This script assumes that the size of litter fall trap is 0.25 m2
-# you can run all plots at once
-# Pls check the time interval calculated by the script is correct
+
+# you can add more classification of fine litter fall as new column like:
+# needle_g_per_trap, anything_g_per_trap
+
+#  If you say FALSE to Days_interval_recorded, you must run one plot at a      .
+#  time, if you say TRUE, you can run all plot in one go                       .
+#                                                                              .
+#  You should mannually check daysBetween, make sure there are no value like   .
+#  1 (1 day between collection is not possible) or 378 (in case you stop your  .
+#  experiment for a year)                                                      .
+#                                                                              .
+#...............................................................................
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##          2. Data Preparation  (what you need to change) ----
@@ -38,13 +47,13 @@
 library(tidyverse)
 library(zoo)
 library(tools)
-
+library(lubridate)
 # Set your working directory (the file where your data, code and functions.r are located )
 # Be careful to use / and not \
-setwd("F:/Side_project/african_data_workshop/General/Dataset examples/fine_litter_fall/")
+setwd("F:/Side_project/african_data_workshop/gem_code_examples/fine_litter_fall/")
 
 # Load pre prepared functions
-source("functions.r")
+source("functions_flf_v2.r")
 source("flf_core.r")
 # Load your data. 
 # Since we are in the right directory, we can just write the name of the dataset
@@ -78,73 +87,66 @@ data_flf <- data_flf %>%
     year = as.integer(year),
     month = as.integer(month),
     day = as.integer(day),
+    sub_plot_code = as.factor(sub_plot_code),
     litterfall_trap_num = as.factor(litterfall_trap_num),
     litterfall_trap_size_m2 = as.numeric(litterfall_trap_size_m2),
-    leaves_g_per_trap = as.numeric(leaves_g_per_trap),
-    twigs_g_per_trap = as.numeric(twigs_g_per_trap),
-    flowers_g_per_trap = as.numeric(flowers_g_per_trap),
-    fruits_g_per_trap = as.numeric(fruits_g_per_trap),
-    seeds_g_per_trap = as.numeric(seeds_g_per_trap),
-    bromeliads_g_per_trap = as.numeric(bromeliads_g_per_trap),
-    epiphytes_g_per_trap = as.numeric(epiphytes_g_per_trap),
-    other_g_per_trap = as.numeric(other_g_per_trap),
-    palm_leaves_g_per_trap = as.numeric(palm_leaves_g_per_trap),
-    palm_flowers_g_per_trap = as.numeric(palm_flowers_g_per_trap),
-    palm_fruits_g_per_trap = as.numeric(palm_fruits_g_per_trap),
-    total_litterfall_g_per_trap = as.numeric(total_litterfall_g_per_trap),
     quality_code = as.factor(quality_code),
-    comments = as.character(comments)
-  )
+    comments = as.character(comments))%>%
+    mutate(across(ends_with('_g_per_trap'),as.numeric)) 
+  
+
 str(data_flf) # OK, the data are in the right format! Let's start processing
 
 
+Days_interval_recorded = FALSE
+
+#  say True, if you have a column census$DaysBetween, unit in days,
+#  say FALSE if you want this script to calculate DaysBetween based on your
+#  year month day
+
+
+#  we try to calculate days interval for each collection by looking
+#  for the date of previous collection. if it is
+#  not too much trouble, it is good to do this manually in excel because
+#  NPP is calculated as roots_weight/days_interval
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                            3. From biomass to NPP                        ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# note that the first several rows are NA because we don't know the daysbetween for the first record! 
 
-# Tidy the data a little bit more
-data_flf2 = data_flf %>% dplyr::rename(
-  plot = plot_code,
-  num = litterfall_trap_num,
-  leaves = leaves_g_per_trap,
-  twigs = twigs_g_per_trap,
-  flowers = flowers_g_per_trap,
-  fruits = fruits_g_per_trap,
-  brom = bromeliads_g_per_trap,
-  epi = epiphytes_g_per_trap,
-  other = other_g_per_trap
-) %>% # we just rename them for simplicity
-  dplyr::mutate(
-    seeds = NA,
-    date = as.Date(
-      paste(data_flf$year, data_flf$month, data_flf$day, sep = "-"),
-      format = "%Y-%m-%d"
-    ),# we convert date into a timestamp in R
-    date = as.POSIXct(date),
-    total = select(., leaves:palm_fruits_g_per_trap) %>% apply(1, sum, na.rm = TRUE)
-  )# we sum up column from leaves to palm_fruits. This will be our total litter fall
+# the following part do unit conversion, just run through**
+### Conversions: flf per ha per month (for each trap)
+# Raw data is in g / litter trap = g / 0.25m2
+# Convert to ha: *(10000/0.25)
+# Convert to Mg: *1 g = 0.000001 Mg
+# Convert to C: *0.49
 
-# In some rows, only total litterfall is recorded, so the sum up would not work
-total_only = data_flf2$total == 0 & !is.na(data_flf2$total_litterfall_g_per_trap) #where our sum up is 0 and there is valid number in column "total litter fall"
+convert_unit =10000*0.000001*0.49*30
 
-data_flf2[total_only, ]$total = data_flf2[total_only, ]$total_litterfall_g_per_trap #Replace the value where the situation happen 
+if (!Days_interval_recorded) {
+  
 
-# Rough data quality check
-# Remove outliers with totalf > 1500
-data_flf2$total[which(data_flf2$total>1500)] <- NA   
-
-# remove implausible totallf (negative litter)
-data_flf2$total[which(data_flf2$total<0)]   <- NA   
-
+    All_npp <- data_flf %>%
+    mutate(date=parse_date_time(paste(year,month,day),"ymd"))%>% # make a date column
+    mutate(DaysBetween=get_time_diffs2(date))%>%
+    mutate(across(ends_with('_g_per_trap'), ~ .x * convert_unit /DaysBetween/litterfall_trap_size_m2 ))
 # Note: At the moment, the code ignores the first collection. 
 # In other word, you can put the first day data in the csv file, with total 
 # litter fall = 0.
-data_flf2$codeb <- paste(data_flf2$plot, data_flf2$num, sep=".") 
-data_flf2$codew <- paste(data_flf2$plot, data_flf2$num, data_flf2$year, data_flf2$month, data_flf2$day, sep=".") #these two lines just make unique identifier. check the instruction file for information about uniqueness
+   message('I got days_between from your date, Pls check this:')
+   distinct(All_npp[,c('DaysBetween','date')])
 
-data2<-Calculate_flf_npp(data_flf2)
+}else{
+   All_npp <- data_flf %>%
+    mutate(date=parse_date_time(paste(year,month,day),"ymd"))%>%
+    mutate(across(ends_with('_g_per_trap'), ~ .x * convert_unit /DaysBetween/litterfall_trap_size_m2 ))
+}
+
+old_col_name<-colnames(All_npp)
+colnames(All_npp)<-str_replace_all(old_col_name,'_g_per_trap','_MgC_ha_month')
+
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                    4. quality check and unit conversion                  ----
@@ -153,32 +155,12 @@ data2<-Calculate_flf_npp(data_flf2)
 
 # The following checks if there are very large time gaps in your data. 
 # You can ajust the maximum time gap acceptable by change the value (here 60 days)
-if(max(data2$meas_int_days)>60){
+if(max(All_npp$DaysBetween,na.rm = TRUE)>60){
   warnings("Check your time interval, there are very large value")}
 
-# the following part do unit conversion, just run through**
-### Conversions: flf per ha per month (for each trap)
-# Raw data is in g / litter trap = g / 0.25m2
-# Convert to ha: *(10000/0.25)
-# Convert to Mg: *1 g = 0.000001 Mg
-# Convert to C: *0.49
-data3 = data2 %>% mutate(leavesflf_MgC_ha_month = (((bleavesflf_g_trap_day*(10000/0.25))*0.000001)*0.49)*30, 
-                         twigsflf_MgC_ha_month   = (((btwigs*(10000/0.25))*0.000001)*0.49)*30,
-                         flowersflf_MgC_ha_month = (((bflowers*(10000/0.25))*0.000001)*0.49)*30,
-                         fruitsflf_MgC_ha_month  = (((bfruits*(10000/0.25))*0.000001)*0.49)*30,
-                         bromflf_MgC_ha_month    = (((bbrom*(10000/0.25))*0.000001)*0.49)*30,
-                         epiflf_MgC_ha_month     = (((bepi*(10000/0.25))*0.000001)*0.49)*30,
-                         otherflf_MgC_ha_month   = (((bother*(10000/0.25))*0.000001)*0.49)*30,
-                         totalflf_MgC_ha_month   = (((btotal*(10000/0.25))*0.000001)*0.49)*30,
-                         plot_code = plot_code,
-                         num = num,
-                         year = year, 
-                         month = month,
-                         collectiondate = collectiondate)
 
-data3 = na_if(data3, Inf)
 
-write.csv(data3, file=paste0(tools::file_path_sans_ext(basename(data_flf_name)), "_fine_litter_fall_NPP_finest.csv"))
+write.csv(All_npp, file=paste0(tools::file_path_sans_ext(basename(data_flf_name)), "_fine_litter_fall_NPP_finest.csv"))
 
 #There is no standard error because it is the finest resolution. We recommend to calculate standard error with 
 
@@ -191,25 +173,11 @@ write.csv(data3, file=paste0(tools::file_path_sans_ext(basename(data_flf_name)),
 # flf per ha per month (average of all the traps)
 # calculate standard error sd/sqrt(length(unique(data3$year)))
 
-data5 = data3 %>% group_by(plot_code, year, month) %>% 
-  dplyr::summarize(leavesflf_MgC_ha_month2 = mean(leavesflf_MgC_ha_month, na.rm = T),
-                   twigsflf_MgC_ha_month2 = mean(twigsflf_MgC_ha_month, na.rm = T),
-                   flowersflf_MgC_ha_month2 = mean(flowersflf_MgC_ha_month, na.rm = T),
-                   fruitsflf_MgC_ha_month2 = mean(fruitsflf_MgC_ha_month, na.rm = T),
-                   bromflf_MgC_ha_month2 = mean(bromflf_MgC_ha_month, na.rm = T),
-                   epiflf_MgC_ha_month2 = mean(epiflf_MgC_ha_month, na.rm = T),
-                   otherflf_MgC_ha_month2 = mean(otherflf_MgC_ha_month, na.rm = T),
-                   totalflf_MgC_ha_month2 = mean(totalflf_MgC_ha_month, na.rm = T),
-                   sd_leavesflf = sd(leavesflf_MgC_ha_month, na.rm = T),
-                   sd_twigsflf = sd(twigsflf_MgC_ha_month, na.rm = T),
-                   sd_flowersflf = sd(flowersflf_MgC_ha_month, na.rm = T),
-                   sd_fruitsflf = sd(fruitsflf_MgC_ha_month, na.rm = T),
-                   sd_bromflf = sd(bromflf_MgC_ha_month, na.rm = T),
-                   sd_epiflf = sd(epiflf_MgC_ha_month, na.rm = T),
-                   sd_otherflf = sd(otherflf_MgC_ha_month, na.rm = T),
-                   sd_totalflf = sd(totalflf_MgC_ha_month, na.rm = T)) 
+data5 = All_npp %>% group_by(plot_code, year, month) %>% 
+  dplyr::summarize(
+                   totalflf_MgC_ha_month2 = mean(total_litterfall_MgC_ha_month, na.rm = T),
 
-data5 = data.frame(data5)
+                   sd_totalflf = sd(total_litterfall_MgC_ha_month, na.rm = T)) 
 
 
 # NPP litterfall in g m-2 mo-1
@@ -223,12 +191,12 @@ plotit = subset(data5, plot_code %in%
 # Reorder X axis so it follows month order
 plotit$month <- factor(plotit$month, levels = c(1:12))
 plotit %>% group_by(plot_code) %>% arrange(plot_code, month, year) %>% 
-  ggplot(data=., aes(month, leavesflf_MgC_ha_month2, colour=year)) + geom_point() +
+  ggplot(data=., aes(month, totalflf_MgC_ha_month2, colour=year)) + geom_point() +
   facet_wrap(~plot_code)
 
 #check outliers
 plotit = subset(data3, plot_code %in% c("ABA-00","ABA-01"))
 plotit$month <- factor(plotit$month, levels = c(1:12))
 plotit %>% group_by(plot_code) %>% arrange(plot_code, month, year) %>% 
-  ggplot(data=., aes(month, leavesflf_MgC_ha_month, colour=year)) + geom_point() 
+  ggplot(data=., aes(month, totalflf_MgC_ha_month2, colour=year)) + geom_point() 
 

@@ -86,8 +86,10 @@ library(BIOMASS)
 rm(list=ls())
 setwd("F:/Side_project/african_data_workshop/General/Dataset examples/stem_NPP/")
 census   <- read.csv("F:/Side_project/african_data_workshop/not_to_share_with_student/KOG_04_census_data_long_format.csv", sep=",", header=T) 
-#census<-census%>%filter(Flag1!=0)
-census<-census%>%filter(F1!=0) #This is to choose alive tree
+census<-census%>%
+  mutate(dbh=ifelse((Flag1==0),NA,dbh))
+# mutate(dbh=ifelse((F1==0),NA,dbh)) #This is to choose alive tree
+# don't use filter because filter delete some rows, it will affect the tree matching later
 
 str(census)
 View(census)
@@ -389,12 +391,11 @@ cen <- mutate(cen, dbh_log=log(dbh))%>%
 
   # this one calculate total npp and total biomass for the whole plot
   NPP_plot <- npp %>%
-    dplyr::summarise(npp_per_ha_MgC_year=sum(npp_per_tree_MgC_year,na.rm=T),
-                     biomass_year1_per_ha_MgC=sum(agC_year1,na.rm=T),
-                     biomass_year2_per_ha_MgC=sum(agC_year2,na.rm=T)
-                     )%>%
-    mutate(number_of_tree_year1=number_of_tree_year1,
-           number_of_tree_year2=number_of_tree_year2)
+    dplyr::summarise(npp_per_ha_MgC_year=sum(npp_per_tree_MgC_year,na.rm=T))
+  NPP_plot$biomass_year1_per_ha_MgC<-sum(agC_1$agC,na.rm=T)
+  NPP_plot$biomass_year2_per_ha_MgC<-sum(agC_2$agC,na.rm=T)
+  NPP_plot$number_of_tree_year1=number_of_tree_year1
+  NPP_plot$number_of_tree_year2=number_of_tree_year2
 
 
   
