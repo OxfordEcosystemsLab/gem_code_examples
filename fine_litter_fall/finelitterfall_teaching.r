@@ -54,13 +54,14 @@ setwd("F:/Side_project/african_data_workshop/gem_code_examples/fine_litter_fall/
 
 # Load pre prepared functions
 source("functions_flf_v2.r")
-source("flf_core.r")
+
 # Load your data. 
 # Since we are in the right directory, we can just write the name of the dataset
 data_flf_name<-'flf_20190201_XXX.csv'
 
 # Use the right separator for your data, depends on how you saved the .csv file (comma separator or ; separator)
-data_flf <- read.csv(data_flf_name) 
+data_flf <- read.csv(data_flf_name) %>%
+  filter(plot_code == 'ABA-00')# for a good daysBetween estimate, you should run one plot at a time, unless you don't need to ask the R script to calculate daysBetween
 
 # Check that the data are correct and that there are no mistakes (the most important step!!)
 summary(data_flf)
@@ -148,6 +149,7 @@ old_col_name<-colnames(All_npp)
 colnames(All_npp)<-str_replace_all(old_col_name,'_g_per_trap','_MgC_ha_month')
 
 
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                    4. quality check and unit conversion                  ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,7 +162,7 @@ if(max(All_npp$DaysBetween,na.rm = TRUE)>60){
 
 
 
-write.csv(All_npp, file=paste0(tools::file_path_sans_ext(basename(data_flf_name)), "_fine_litter_fall_NPP_finest.csv"))
+write.csv(All_npp, file=paste0(data_flf$plot_code[1], "_fine_litter_fall_NPP_finest.csv"))
 
 #There is no standard error because it is the finest resolution. We recommend to calculate standard error with 
 
@@ -184,9 +186,7 @@ data5 = All_npp %>% group_by(plot_code, year, month) %>%
 data5$totalflf_g_m2_mo <- data5$totalflf_MgC_ha_month2 * 0.49 * 10000 * 0.000001
 
 # plot it
-plotit = subset(data5, plot_code %in% 
-                  # Hereafter write the name of your plots that you want to plot
-                  c("ABA-00","ABA-01"))
+plotit = data5
 
 # Reorder X axis so it follows month order
 plotit$month <- factor(plotit$month, levels = c(1:12))
@@ -195,8 +195,10 @@ plotit %>% group_by(plot_code) %>% arrange(plot_code, month, year) %>%
   facet_wrap(~plot_code)
 
 #check outliers
-plotit = subset(data3, plot_code %in% c("ABA-00","ABA-01"))
+plotit = data5
 plotit$month <- factor(plotit$month, levels = c(1:12))
 plotit %>% group_by(plot_code) %>% arrange(plot_code, month, year) %>% 
   ggplot(data=., aes(month, totalflf_MgC_ha_month2, colour=year)) + geom_point() 
+
+ggsave(filename = paste0(data_flf$plot_code[1], "_flf.png"))
 

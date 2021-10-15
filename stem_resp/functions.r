@@ -92,7 +92,6 @@ d5 <- parse_date_time(paste(2013,6,15),"ymd")
 date_vec<-c(d1,d2,d3,d4)
 get_time_diffs(c(d1,d2,d3,d4))
 
-
 # Huanyuan Zhang update get_time_diffs because the above example is not working
 # This is to allow multiple records happened in the same date
 # 2021 August 14
@@ -107,7 +106,6 @@ get_time_diffs2 <- function(date_vec){
   return(my_out_put$c.NA..days_difference.);
 }
 get_time_diffs2(c(d1,d2,d3,d4))
-
 
 ### See this page https://stackoverflow.com/questions/10077415/replacing-nas-in-r-with-nearest-value
 f1 <- function(dat) {
