@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 # Contributors
 
 This github repo contains up-to-date Net primary production calculation method following data collected with [GEM protocol](http://gem.tropicalforests.ox.ac.uk/page/resources)
