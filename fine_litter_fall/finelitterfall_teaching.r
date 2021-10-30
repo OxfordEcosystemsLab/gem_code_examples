@@ -79,7 +79,7 @@ data_flf <- data_flf %>%
   filter(!is.na(plot_code)) 
 
 
-## OK, so the data are uploaded in R. First thing to do is to be sure that each
+## First thing to do is to be sure that each
 ## variable is in the right format. To do that, let's modify the format of each variable
 ## into the right format for the analyses.
 data_flf <- data_flf %>%

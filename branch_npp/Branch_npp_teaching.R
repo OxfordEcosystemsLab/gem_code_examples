@@ -123,7 +123,7 @@ library(lubridate)
 library(Hmisc)
 library(here)
 setwd(here())
-setwd("F:/Side_project/african_data_workshop/General/Dataset examples/branch_npp/")
+setwd("F:/Side_project/african_data_workshop/gem_code_examples//branch_npp/")
 census <- read.csv('cwd_20170710_XXX.csv',
                    sep = ",",
                    header = T)
@@ -173,7 +173,7 @@ Days_interval_recorded = FALSE
 #  NPP is calculated as cwd_weight/days_interval
 
 # represent wood density from decay class 1 to 5
-WoodDensity_g_cm3 <- c(0.501, 0.434, 0.421, 0.308, 0.185)
+decomposed_wd_g_cm3<- c(0.501, 0.434, 0.421, 0.308, 0.185)
 Live_wood_density<-0.523 
 # Live_wood_density is weighted average of alive wood density of your plot
 # This will be used to estimate alive wood mass from branch volumn measurements
@@ -181,7 +181,7 @@ Live_wood_density<-0.523
 # drymass
 
 # if you wish to calculate Live_wood_density from census data, or to calculate 
-# WoodDensity_g_cm3 from coarse woody debris sample, check "Archived information"
+# decomposed_wd_g_cm3from coarse woody debris sample, check "Archived information"
 # in this script
 
 decay_class = c(1,2,3,4,5)
@@ -356,6 +356,10 @@ All_npp$npp_MgC_ha_year = All_npp$NPP_g_day * Unit_correct
 
 
 
+write.csv (All_stock, file = paste0(census$plot_code[1],"_branch_nacromass_stock_finest.csv"))
+
+write.csv (All_npp, file = paste0(census$plot_code[1],"_branch_NPP_finest.csv"))
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                            7. data visualization                         ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -448,10 +452,6 @@ ggplot(All_npp_per_transect, aes(x=cwd_transect_num, y=npp_MgC_ha_year_transect)
   scale_y_continuous(breaks=seq(1:100)) +
   theme_bw()
 
-write.csv (All_stock, file = paste0(census$plot_code[1],"_branch_nacromass_stock_finest.csv"))
-
-write.csv (All_npp, file = paste0(census$plot_code[1],"_branch_NPP_finest.csv"))
-
 
 
 #...............................................................................
@@ -527,7 +527,7 @@ if (Make_my_own_density){
   
   
 } else {
-  WoodDensity_g_cm3 <- c(0.501, 0.434, 0.421, 0.308, 0.185)
+  decomposed_wd_g_cm3<- c(0.501, 0.434, 0.421, 0.308, 0.185)
   # represent wood density from decay class 1 to 5
 }
 
