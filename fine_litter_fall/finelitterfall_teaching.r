@@ -131,6 +131,7 @@ if (!Days_interval_recorded) {
 
     All_npp <- data_flf %>%
     mutate(date=parse_date_time(paste(year,month,day),"ymd"))%>% # make a date column
+    group_by(plot_code)%>%
     mutate(DaysBetween=get_time_diffs2(date))%>%
     mutate(across(ends_with('_g_per_trap'), ~ .x * convert_unit /DaysBetween/litterfall_trap_size_m2 ))
 # Note: At the moment, the code ignores the first collection. 

@@ -140,7 +140,6 @@ f1 <- function(dat) {
 weighted.var.se <- function(x, weights, na.rm = TRUE){
   var <- Hmisc::wtd.var(x, weights, na.rm)
   weights <- sum( (weights / sum(weights))^2 )
-  
   sqrt(var*weights)
 }
 
