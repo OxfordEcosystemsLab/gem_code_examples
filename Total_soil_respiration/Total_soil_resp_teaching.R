@@ -64,7 +64,7 @@ library(lubridate)
 library(outliers)
 
 setwd(
-  "F:/Side_project/african_data_workshop/General/Dataset examples/Total_soil_respiration/"
+  "F:/Side_project/african_data_workshop/gem_code_examples/Total_soil_respiration/"
 )
 
 source("EGM_flux_recalculation.R")
@@ -239,7 +239,7 @@ ggplot(All_resp_per_subplot,
 
 
 write.csv(All_resp,
-          file = paste0(census$plot_code[1], "_total_soil_respiration.csv"))
+          file = paste0(GEM_raw$plot_code[1], "_total_soil_respiration_finest.csv"))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                            Archived information                          ----

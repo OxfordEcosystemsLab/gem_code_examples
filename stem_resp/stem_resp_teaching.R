@@ -112,7 +112,7 @@ library(ggplot2)
 library(lubridate)
 library(outliers)
 
-setwd("F:/Side_project/african_data_workshop/General/Dataset examples/stem_resp")
+setwd("F:/Side_project/african_data_workshop/gem_code_examples/stem_resp")
 source("allometric_equations_2014.R")
 source("EGM_flux_recalculation.R")
 source("soilrespiration_auxfunctions.R")
@@ -190,7 +190,7 @@ data1 = GEM_raw
 
 # These several lines fill NA in atmosphere pressure, estimate missing atmospheric pressure whith temperature-dependent version of the barometric equation (see soilrespiration_auxfunctions)
 data1<-data1%>%
-  mutate(atmp_mb=ifelse(is.na(atmp_mb),barometric_equation_T(elevation=550, temp=t),atmp_mb))
+  mutate(atmp_mb=ifelse(is.na(atmp_mb),barometric_equation_T(elevation=550, temp=air_temp_c),atmp_mb))
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,7 +246,6 @@ for(i in 1:length(res$tree_tag)){
     }else{res$dbh[i] <- NA}
   }else{res$dbh[i] <- NA}
 }
-
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
