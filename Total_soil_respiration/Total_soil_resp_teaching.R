@@ -1,5 +1,4 @@
 
-
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                                                            ~~
@@ -12,9 +11,10 @@
 ##                                1. Information                            ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-##~~~~~~~~~~~~~~~~
-##  ···Authors----
-##~~~~~~~~~~~~~~~~
+##~~~~~~~~~~~~~~~~~
+##  ~ Authors  ----
+##~~~~~~~~~~~~~~~~~
+
 
 #  This script was built upon joined efforts by lots of people in
 #  Yadvinder Malhi's lab. However, I devided to write this script
@@ -26,36 +26,25 @@
 # 2021 August 13 as part of the African data workshop
 
 
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                2. Meta data                              ----
+##                              2. Important note                           ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···How does this script work?  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# you can run multiple plots in one go
 
+# one_measurement_id identify a EGM flux measurement (which include around 25 time steps)
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···Necessary input  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-##~~~~~~~~~~~~~~~~~~~~~~~
-##  ···important note----
-##~~~~~~~~~~~~~~~~~~~~~~~
-
-# run one plot by one plot
-# one_measurement_id identify a EGM flux measurement, it is very importnat
-# to get the id correct and unique for each measurement
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                             3. data preparation                          ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-##~~~~~~~~~~~~~~~~~~~~~~
-##···quality check  ----
-##~~~~~~~~~~~~~~~~~~~~~~
+##~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ Quality check  ----
+##~~~~~~~~~~~~~~~~~~~~~~~
+
 
 rm(list = ls())
 library(dplyr)
@@ -90,9 +79,10 @@ GEM_raw$treatment_code_partitioning <- as.factor(GEM_raw$treatment_code_partitio
 GEM_raw$measurement_code <- as.factor(GEM_raw$measurement_code)
 
 
-##~~~~~~~~~~~~~~~~~~~~~
-##···your options  ----
-##~~~~~~~~~~~~~~~~~~~~~
+##~~~~~~~~~~~~~~~~~~~~~~
+##  ~ Your options  ----
+##~~~~~~~~~~~~~~~~~~~~~~
+
 
 elevation = 550 #unit: m #This is site elevation, used to estimate missing atmp
 GEM_raw$collar_diameter_cm = 12   #[cm] collar diameter
@@ -125,10 +115,7 @@ one_measurement_id = c(
 #  c('subplot','year','month','day')                                       
 #  One measurement will be calculated into one flux value
 
-#···············································································
-#  normally you don't need to change anything below, but you might want to     ·
-#  read and double-check that it works for your site                           ·
-#···············································································
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                    4. loop through each EGM measurement                  ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,9 +232,10 @@ write.csv(All_resp,
 ##                            Archived information                          ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···Get temperature from other dataset----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ Get temperature from other datasets  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #data1 is your stem_resp dataset
 data1$Decimal_Date <-
   lubridate::decimal_date(as.Date(paste(data1$year, data1$month, data1$day, sep = '-')))
