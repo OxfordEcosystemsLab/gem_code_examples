@@ -447,9 +447,9 @@ cen <- mutate(cen, dbh_log=log(dbh))%>%
   plot_table<-plot_table%>%
     dplyr::rename(AG_npp_per_ha_MgC_year=npp_per_ha_MgC_year)%>%
     dplyr::rename(AG_npp_per_ha_MgC_year_se=npp_std)%>%
-    mutate_with_error(ABG_npp_per_ha_MgC_year ~ AG_npp_per_ha_MgC_year *
+    mutate_with_error(ABG_npp_per_ha_MgC_year = AG_npp_per_ha_MgC_year *
              (above_below_ground_ratio+1))%>%
-    mutate_with_error(BG_npp_per_ha_MgC_year ~ AG_npp_per_ha_MgC_year * above_below_ground_ratio)
+    mutate_with_error(BG_npp_per_ha_MgC_year = AG_npp_per_ha_MgC_year * above_below_ground_ratio)
   
   write.csv(tree_table, file=paste0(plotname,"_stem_NPP_finest.csv"))
   write.csv(plot_table, file=paste0(plotname, "_stem_NPP_plot.csv"))
