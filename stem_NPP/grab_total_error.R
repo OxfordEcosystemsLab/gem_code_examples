@@ -87,5 +87,40 @@ grab_total_error<-function(cen_error_propogate,census1_year,NPP_plot){
 }
 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+mutate_with_error = function(.data, f) {
+  exprs = list(
+    # expression to compute new variable values
+    deparse(f[[3]]) %>%
+      paste(collapse=''),
+    # expression to compute new variable errors
+    sapply(all.vars(f[[3]]), function(v) {
+      dfdp = deparse(D(f[[3]], v))
+      sprintf('(%s_se*(%s))^2', v, dfdp)
+    }) %>%
+      paste(collapse='+') %>%
+      sprintf('sqrt(%s)', .)
+  )
+  names(exprs) = c(
+    deparse(f[[2]]),
+    sprintf('%s_se', deparse(f[[2]]))
+  )
+  myexprs <- purrr::map( exprs, rlang::parse_expr )
+  
+  .data %>%
+    # the standard evaluation alternative of mutate()
+    mutate(!!!myexprs)
+}
+
+
+#  I got the above equation from this website, I modify it a bit because        
+#  mutate_ is deprecated https://www.r-bloggers.com/2015/01/easy-error-propagation-in-r/                                                       
+# How to use this? example here
+
+#  The idea is that, you have some variables (A, B, C) to mutate, you need to   
+#  call the standard error (or deviation) of them as A_se, B_se, C_se, yes, just      
+#  add _se, and then when you muate_with_error(new_thing = A + B *C), you will    
+#  auto get dnew_thing   
 

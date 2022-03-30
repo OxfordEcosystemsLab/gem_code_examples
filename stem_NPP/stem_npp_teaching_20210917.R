@@ -433,11 +433,23 @@ cen <- mutate(cen, dbh_log=log(dbh))%>%
   ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
   Tree_biomass<-cen[,c('species','genus','year','height_final','density','dbh','agC','date')]%>%
-    dplyr::rename(tree_biomass_Mg=agC)%>%
-    mutate(woody_biomass = (above_below_ground_ratio+1) * tree_biomass_Mg)
+    dplyr::rename(AG_biomass_MgC=agC)%>%
+    mutate(ABG_biomass_MgC = (above_below_ground_ratio+1) * AG_biomass_MgC,
+           BG_biomass_MgC = ABG_biomass_MgC - AG_biomass_MgC)
   
-  tree_table$woody_npp = tree_table$npp_per_tree_MgC_year * (above_below_ground_ratio+1)
-  plot_table$woody_npp = plot_table$npp_per_ha_MgC_year * (above_below_ground_ratio+1)
+  
+  tree_table<-tree_table%>%
+    dplyr::rename(AG_npp_per_tree_MgC_year=npp_per_tree_MgC_year)%>%
+    mutate(ABG_npp_per_tree_MgC_year = AG_npp_per_tree_MgC_year *
+             (above_below_ground_ratio+1),
+           BG_npp_per_tree_MgC_year = ABG_npp_per_tree_MgC_year - AG_npp_per_tree_MgC_year )
+  
+  plot_table<-plot_table%>%
+    dplyr::rename(AG_npp_per_ha_MgC_year=npp_per_ha_MgC_year)%>%
+    dplyr::rename(AG_npp_per_ha_MgC_year_se=npp_std)%>%
+    mutate_with_error(ABG_npp_per_ha_MgC_year = AG_npp_per_ha_MgC_year *
+             (above_below_ground_ratio+1))%>%
+    mutate_with_error(BG_npp_per_ha_MgC_year = AG_npp_per_ha_MgC_year * above_below_ground_ratio)
   
   write.csv(tree_table, file=paste0(plotname,"_stem_NPP_finest.csv"))
   write.csv(plot_table, file=paste0(plotname, "_stem_NPP_plot.csv"))
