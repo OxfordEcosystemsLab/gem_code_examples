@@ -301,7 +301,7 @@ Total_stem_area <- census %>%
   group_by(year,plot_code) %>%
   summarise(total_stem_area_per_year = sum(stem_area, na.rm = T))%>%
   mutate(total_stem_area_per_year_se = total_stem_area_per_year*0.1)
-
+# timed by 0.1 as a broad estimate of standard error 10%
 Per_year_table <- All_resp %>%
   group_by(year,plot_code) %>%
   summarise(
@@ -321,10 +321,10 @@ Per_year_table <- All_resp %>%
           (total_stem_area_per_year_se / total_stem_area_per_year)^2
       ) * a
     )
-  )%>%
+  )%>% 
   mutate(MgC_year_per_ha = a * convert_year ,
          MgC_year_per_ha_se = a_se * convert_year )%>%
-  select(-a, -a_se)
+  select(-a, -a_se) # This is the old version manual calculation of standard error, now you can use the mutate_with_error in functions.r 
 
 
 write.csv(Per_year_table, file = paste0(census$plot_code[1], "_stem_respiration_per_plot.csv"))
