@@ -207,6 +207,7 @@ scores_na <- function(x, ...) {
   scores[not_na] <- outliers::scores(na.omit(x), ...)
   scores
 }
+# the liner model simply fill NA in flux_umolm2sec according to last_inputf (the flux calculated by EGM machine it self)
 
 lm_function <- lm(flux_umolm2sec ~ last_inputf, data = EGM_output)
 res <- EGM_output %>%
@@ -229,8 +230,12 @@ res$census_date <- lubridate::decimal_date(as.Date(paste(res$year, res$month, re
 
 for (i in 1:length(res$tree_tag)) {
   if (is.na(match(res$tree_tag[i], data_census$tree_tag)) == FALSE) {
+    # see whether the tree tag in stem respiration measurements also exist in census data
     try(subset_census <- subset(data_census, data_census$tree_tag == res$tree_tag[i]))
+    # If so, we pull out census data recorded under this tree tag
     if (is.na(res$census_date[i]) == FALSE) {
+      # if we know the respiration measurement date, then we look for the dbh in nearest year
+      # in case the above method does not find a dbh, we have to put NA for the dbh 
       subset_census <- subset_census %>% filter(!dbh == 0)
       res$dbh[i] <- subset_census$dbh[which.min(abs(res$census_date[i] - subset_census$census_date))]
       # print(i)
@@ -262,8 +267,9 @@ convert_year <- convert * 12 # From umol s-1 to [MgC year^-1]
 All_resp <- res %>%
   mutate(
     stem_area = Chambers2004_surfaceArea(dbh / 10), # [m^2] Stem Area per tree, , input dbh must be in [cm]!!!!!!
-    stem_area_se = stem_area * 0.1, # following Chambers 2004.... Yadvinder: this is very crude!
-    flux_umol_sec_per_stem = stem_area * flux_umolm2sec_no_outlier
+    stem_area_se = stem_area * 0.1, # following Chambers 2004....just assume standard error is 10%, Yadvinder: this is very crude!
+    flux_umol_sec_per_stem = stem_area * flux_umolm2sec_no_outlier,
+    flux_MgC_per_year_per_stem = flux_umol_sec_per_stem*convert_year,
   )
 
 All_resp_per_stem <- All_resp %>%

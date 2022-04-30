@@ -49,9 +49,9 @@ if (length(ten_co2) >= 4){                   # if at least 7 of the 10 values ar
   NA_note = 'not enough EGM values for fitting curve'
 }
 flux_umolm2sec<-as.double(flux)
-Error<-NA_note
+Code_computing_Error<-NA_note
 
-return(data.frame(flux_umolm2sec, Error,last_inputf,last_time))
+return(data.frame(flux_umolm2sec, Code_computing_Error,last_inputf,last_time))
 
 }
 

@@ -88,7 +88,7 @@ library(ggplot2)
 #setwd(here::here())
 source('functions.r')
 setwd("F:/Side_project/african_data_workshop/General/Dataset examples/")
-census <- read.csv('Herb_npp_20210822_ABC.csv',
+census <- read.csv('Herb_npp_20210822_XXX(example).csv',
                    sep = ",",
                    header = T)
 str(census) # Use this to check input data, compare with metadata above

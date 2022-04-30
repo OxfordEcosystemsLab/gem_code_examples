@@ -137,7 +137,7 @@ library(tidyverse)
 source('Terhi_40_to_120_magical_conversion.R')
 source('functions.R')
 setwd("F:/Side_project/african_data_workshop/General/Dataset examples/ingrowth_core")
-census <- read.csv('ic_imported_20191107_ABC.csv',
+census <- read.csv('ic_imported_20191107_XXX(example).csv',
                    sep = ",",
                    header = T)
 str(census) # Use this to check input data, compare with metadata above

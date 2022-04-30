@@ -52,28 +52,28 @@
 #  respiration                                                                  
 
 
-#···············································································
-#  We have: con_no_lit, CTRL, my_no_lit, so_no_lit                             ·
-#                                                                              ·
-#  con_nor_lit = control & normal litterfall,                                  ·
-#  con_no_lit = control & no litterfall,                                       ·
-#  con_doub_lit = control & double litterfall,                                 ·
-#  my_nor_lit = mycorrhizae & normal litterfall,                               ·
-#  my_no_lit = mycorrhizae & no litterfall,                                    ·
-#  my_doub_lit = mycorrhizae & double litterfall,                              ·
-#  so_nor_lit = soil & normal litterfall,                                      ·
-#  so_no_lit = soil & no litterfall,                                           ·
-#  so_doub_lit = soil & double litterfall.                                     ·
-#  + ADD ml = mineral layer.                                                   ·
-#                                                                              ·
-#  So: we have:                                                                ·
-#  total soil respiration = CTRL                                               ·
-#  Litter respiration = (CTRL - con_no_lit) / CTRL                             ·
-#  Heterotrophic respiration = (my_no_lit + Litter respiration) / CTRL         ·
-#  Autotrophic Respiration = (con_no_lit - my_no_lit) / CTRL                   ·
-#  Mycorrhizae respiration = (my_no_lit - so_no_lit) / CTRL                    ·
-#                                                                              ·
-#···············································································
+#··············································································?
+#  We have: con_no_lit, CTRL, my_no_lit, so_no_lit                             ?
+#                                                                              ?
+#  con_nor_lit = control & normal litterfall,                                  ?
+#  con_no_lit = control & no litterfall,                                       ?
+#  con_doub_lit = control & double litterfall,                                 ?
+#  my_nor_lit = mycorrhizae & normal litterfall,                               ?
+#  my_no_lit = mycorrhizae & no litterfall,                                    ?
+#  my_doub_lit = mycorrhizae & double litterfall,                              ?
+#  so_nor_lit = soil & normal litterfall,                                      ?
+#  so_no_lit = soil & no litterfall,                                           ?
+#  so_doub_lit = soil & double litterfall.                                     ?
+#  + ADD ml = mineral layer.                                                   ?
+#                                                                              ?
+#  So: we have:                                                                ?
+#  total soil respiration = CTRL                                               ?
+#  Litter respiration = (CTRL - con_no_lit) / CTRL                             ?
+#  Heterotrophic respiration = (my_no_lit + Litter respiration) / CTRL         ?
+#  Autotrophic Respiration = (con_no_lit - my_no_lit) / CTRL                   ?
+#  Mycorrhizae respiration = (my_no_lit - so_no_lit) / CTRL                    ?
+#                                                                              ?
+#··············································································?
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##  ···Necessary input  ----
@@ -104,6 +104,9 @@
 
 #  You must run one plot at a time
 
+#  The ultimate goal of this script is to calculate % of each respiration components per plot (one value a plot, there are too many noise, it is difficult to look at each date etc)
+
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                             3. data preparation                          ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,14 +128,21 @@ source("soilrespiration_auxfunctions.R")
 source("functions.r")
 
 
-GEM_raw <-   read.table('part_soil_resp_20180327_XXX', sep = ",",
-             header = T)%>%
-  filter(plot_code == 'PP1')
+GEM_raw <-   read.table('Part_Soil_Resp_Gabon.csv', sep = ",",
+                        header = T)%>%
+  filter(plot_code == 'LPG-01')%>%
+  #  #This is only for site having treatments plus 10 CTRL collars at the         
+  #  middle, we take these CTRL away at the moment, you might want to use these   
+  #  as part of the total soil respiration measurements, anyhow, this is not      
+  #  relevant to partitioning experiment so not used in this script. It might 
+  #  help you combine partitioning with total soil respiration by providing flux info every date.
+  filter(!measurement_code=='CTRL') 
 
 GEM_raw$plot_code <- as.factor(GEM_raw$plot_code)
 GEM_raw$year <- as.numeric(GEM_raw$year)
 GEM_raw$month <- as.numeric(GEM_raw$month)
 GEM_raw$sub_plot <- as.factor(GEM_raw$sub_plot)
+GEM_raw$plot_corner_code <- as.character(GEM_raw$plot_corner_code)
 GEM_raw$replica <- as.factor(GEM_raw$replica)
 GEM_raw$co2ref_ppm_sec <- as.numeric(GEM_raw$co2ref)
 GEM_raw$treatment_code <- as.character(GEM_raw$treatment_code_partitioning)
@@ -141,15 +151,17 @@ GEM_raw$atmp_mb <- as.numeric(GEM_raw$atmp)
 GEM_raw$InputF <- as.numeric(GEM_raw$InputF)
 GEM_raw$measurement_code <- as.character(GEM_raw$measurement_code)
 
+unique(GEM_raw$treatment_code)
+unique(GEM_raw$plot_corner_code)
 
 ##~~~~~~~~~~~~~~~~~~~~~
-##···your options  ----
+##???your options  ----
 ##~~~~~~~~~~~~~~~~~~~~~
 
-elevation = 550 #unit: m #This is site elevation, used to estimate missing atmp
-GEM_raw$collar_diameter_cm = 12   #[cm] collar diameter
+elevation = 399 #unit: m #This is site elevation, used to estimate missing atmp
+GEM_raw$collar_diameter_cm = 11   #[cm] collar diameter
 GEM_raw$collar_height_cm = 5      #[cm] collar height
-GEM_raw$air_temp_c = 25
+GEM_raw$air_temp_c = 25.7
 
 #  you might want to specify
 #  collar height/diameter and temperature for each EGM record, in
@@ -159,45 +171,47 @@ GEM_raw$air_temp_c = 25
 
 
 
+
 one_measurement_id = c(
   'plot_code',
-  'sub_plot',
+  'plot_corner_code',
   'collar_number',
-  'replica',
   'day',
   'month',
   'year',
   'measurement_code',
   'treatment_code')
 
+#this is 1 egm measurement so under one of 'one_measurement_id' you should see only 27 rows
 #  This combination need to be a unique flag for each measurement, you
 #  can customize yours. For example, if you have only one measurement under
 #  sub_plot + date, then you can simply one_measurement_id =               
 #  c('subplot','year','month','day')
 
+
 One_experiment_id = c('plot_code',
-                      'sub_plot', 
+                      'plot_corner_code', 
                       'day',
                       'month',
                       'year')
-# One experiment id is a unique id for each experiment, a experiment is a group of C1 S1 S2 S3, or a group of con_nor_lit, con_no_lit, my_no_lit, so_no_lit,ml
+# one set (array). One experiment id is a unique id for each experiment, a experiment is a group of C1 S1 S2 S3, or a group of con_nor_lit, con_no_lit, my_no_lit, so_no_lit,ml
 # Normally, according to GEM RAINFOR manual, each subplot should have maximum one experiment. 
 
 Collar_id = c('plot_code',
-                      'sub_plot', 
-                      'treatment_code')
+              'plot_corner_code', 
+              'treatment_code')
 # this is a collar
 
 # I just grab temperature from meteological station dataset
-Temp <- read.table("F:/Oxford/Chapter_two/stem_respiration/input/BOB_gapfill_erai_monthly_1979_2017.csv", sep = ",", header = TRUE)
-Temp$Serial_date_temp <- lubridate::decimal_date(lubridate::ymd(paste(Temp$year, Temp$month, 15, sep = "-") ))
-GEM_raw$Decimal_Date <- lubridate::decimal_date(as.Date(paste(GEM_raw$year, GEM_raw$month, GEM_raw$day, sep = '-')))
-for(i in 1:length(GEM_raw$Decimal_Date)){
-  if(is.na(GEM_raw$Decimal_Date[i]) == FALSE){
-    GEM_raw$air_temp_c[i] = Temp$Tmean[which.min(abs(GEM_raw$Decimal_Date[i]- Temp$Serial_date_temp))]
-  }
-  else{GEM_raw$air_temp_c[i] = 25}
-}
+#Temp <- read.table("F:/Oxford/Chapter_two/stem_respiration/input/BOB_gapfill_erai_monthly_1979_2017.csv", sep = ",", header = TRUE)
+#Temp$Serial_date_temp <- lubridate::decimal_date(lubridate::ymd(paste(Temp$year, Temp$month, 15, sep = "-") ))
+#GEM_raw$Decimal_Date <- lubridate::decimal_date(as.Date(paste(GEM_raw$year, GEM_raw$month, GEM_raw$day, sep = '-')))
+#for(i in 1:length(GEM_raw$Decimal_Date)){
+# if(is.na(GEM_raw$Decimal_Date[i]) == FALSE){
+#  GEM_raw$air_temp_c[i] = Temp$Tmean[which.min(abs(GEM_raw$Decimal_Date[i]- Temp$Serial_date_temp))]
+# }
+# else{GEM_raw$air_temp_c[i] = 25}
+#}
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,7 +227,7 @@ data1 <- data1 %>%
   mutate(treatment_code=ifelse(is.na(treatment_code),measurement_code,treatment_code))%>%
   mutate(atmp_mb = ifelse(
     is.na(atmp_mb),
-    barometric_equation_T(elevation = 550, temp = air_temp_c),
+    barometric_equation_T(elevation = 399, temp = air_temp_c),
     atmp_mb
   )) %>%
   mutate(codew = paste(!!!rlang::syms(one_measurement_id),sep = "_")
@@ -237,6 +251,7 @@ for (i in 1:length(uid)) {
 #  failed, we tried to estimate it from input_f (which is a flux calculated     
 #  by EGM it self)                                                              
 
+# the liner model simply fill NA in flux_umolm2sec according to last_inputf (the flux calculated by EGM machine it self)
 
 lm_function <- lm(flux_umolm2sec ~ last_inputf, data = EGM_output)
 res <- EGM_output %>%
@@ -281,10 +296,23 @@ scores_na <- function(x, ...) {
   scores
 } # This functions is to add outlier id 
 
-     #.............data cleaning - remove bad measurement.............
+#.............data cleaning - remove bad measurement.............
 
-# Another method only work if you have more than two years measurement, i.e. more than 10 records under a codew_collar 
+# The outlier removal method below only work if you have more than two years measurement, i.e. more than 10 records under a codew_collar 
 # if you want this, you might keep group_by(codew_collar) to have outlier calculated for each plot independently
+
+
+#  # the outlier removal idea here by collar is that, for one collar, the       
+#  flux should be rather consistent through time, if one of the measurement     
+#  is very high compared with other dates, then it is possible that the         
+#  measurement is wrong (for example, a mouse dead beneath for that month)                                                        
+
+
+#  # The second possibility of 'outlier' is that the collar might be placed     
+#  on an ant net, or the collar plastic was broken etc, which make the collar   
+#  wrong for any date, this will be diagnostic with the pivot table by          
+#  comparing with other collars                                                 
+
 
 All_resp_treatment <- All_resp %>%
   mutate(codew_exp = paste(!!!rlang::syms(One_experiment_id),sep = "_")) %>% 
@@ -297,28 +325,33 @@ All_resp_treatment <- All_resp %>%
   group_by(codew_collar) %>% 
   mutate(Outlier_id = scores_na((MgC_year_per_ha), type = "iqr"))
 
+#  # These codes will plot out some time series of each collars,help you        
+#  check outliers. We displaying both flux measurements and corresponding       
+#  outliers value, we need to find a reasonable outliers threshold to           
+#  identify wrong measurements, normally, we use 1.5 as threshold               
+
+
 uid<-unique(All_resp_treatment$codew_collar)
 dir.create('plots')
-# These codes will plot out some time series of each collars, help you check outliers
 for (i in 1:length(uid)) {
-
+  
   wwwwww<-All_resp_treatment%>%
-  filter(codew_collar==uid[i])%>%
-  ggplot(aes(x=date)) +
+    filter(codew_collar==uid[i])%>%
+    ggplot(aes(x=date)) +
     geom_line(aes(y=MgC_year_per_ha),color = 'blue')+
     geom_point(aes(y=MgC_year_per_ha),color = 'blue') +
-      geom_line(aes(y=abs(Outlier_id)*10),color = 'red')+
+    geom_line(aes(y=abs(Outlier_id)*10),color = 'red')+
     geom_point(aes(y=abs(Outlier_id)*10),color = 'red') +
     ggtitle(uid[i])+ scale_y_continuous(
-    # Features of the first axis
-    name = "MgC_year_per_ha",
-    # Add a second axis and specify its features
-    sec.axis = sec_axis(~./10, name="Outlier id, the larger, the worse"))+ 
+      # Features of the first axis
+      name = "MgC_year_per_ha",
+      # Add a second axis and specify its features
+      sec.axis = sec_axis(~./10, name="Outlier id, the larger, the worse"))+ 
     theme_ipsum() +
-  theme(
-    axis.title.y = element_text(color = 'blue', size=13),
-    axis.title.y.right = element_text(color = 'red', size=13)
-  ) 
+    theme(
+      axis.title.y = element_text(color = 'blue', size=13),
+      axis.title.y.right = element_text(color = 'red', size=13)
+    ) 
   ggsave(filename = paste0('./plots/',uid[i],'.jpg'),plot =wwwwww )
 }
 
@@ -337,7 +370,7 @@ All_resp_treatment_no_outlier<- All_resp_treatment%>%
       Error,
       paste0(Error, ' .Outlier detected, replaced with NA')
     ))%>%
-    mutate(
+  mutate(
     Error = ifelse(
       (MgC_year_per_ha) > 0, 
       Error,
@@ -345,11 +378,11 @@ All_resp_treatment_no_outlier<- All_resp_treatment%>%
     ),
     MgC_year_per_ha_no_outlier = ifelse((MgC_year_per_ha) > 0, MgC_year_per_ha_no_outlier, NA))
 
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
-#···············································································
-                                
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#???????????????????????????????????????????????????????????????????????????????
+
 #  Now you need to view(All_resp_treatment_no_outlier) and check                
 #  [all_treatment_code] & [number_of_exp_records] &                             
 #  [number_of_unique_exp_flags], in my case, both number must be 5              
@@ -359,48 +392,48 @@ All_resp_treatment_no_outlier<- All_resp_treatment%>%
 # [all_treatment_code] is the treatment codes of records under a given codew_exp
 # [number_of_unique_exp_flags] is the length of unique(all_treatment_code)
 
-#···············································································
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
-The_number_of_treatment_per_experiment = 5
+#???????????????????????????????????????????????????????????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+The_number_of_treatment_per_experiment = 4
 # I have con_nor_lit, con_no_lit, my_no_lit, so_no_lit,ml
 # Probably you have more? I am imposing a very strict data check later, the code may check 
-# the number of records under One_experiment_id, it must be equal to The_number_of_treatment_per_experiment you defined here
+# the number of records under One_experiment_id (codew_exp), it must be equal to The_number_of_treatment_per_experiment you defined here
 # The below two lines of filter do this
 
 PIVOT_table<-All_resp_treatment_no_outlier%>%
-  #filter(number_of_exp_records==The_number_of_treatment_per_experiment)%>%
-  #filter(number_of_unique_exp_flags==The_number_of_treatment_per_experiment)%>%
+  filter(number_of_exp_records==The_number_of_treatment_per_experiment)%>%
+  filter(number_of_unique_exp_flags==The_number_of_treatment_per_experiment)%>%
   mutate(id = codew_exp)%>%
   mutate(avg=MgC_year_per_ha_no_outlier)%>%
   tidyr::pivot_wider(id_cols = id, 
-              names_from = treatment_code, 
-              values_from = c("avg"))
+                     names_from = treatment_code, 
+                     values_from = c("avg"))
   
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
+#·························IMPORTANT NOTE························?
+#·························IMPORTANT NOTE························?
+#·························IMPORTANT NOTE························?
 
 #  NOW have a look at your pivot table and think about how to calculate         
 #  respiration proportion, as you can see, there are lots of NA, source from    
 #  (1) missing in raw data (2) outlier removal                                  
 
 
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
-#·························IMPORTANT NOTE·························
+#·························IMPORTANT NOTE························?
+#·························IMPORTANT NOTE························?
+#·························IMPORTANT NOTE························?
 
 #.............data cleaning - remove bad experiment set up.......
 
 Final_lovely_result<-PIVOT_table%>%
   mutate( Litter_respiration= ( con_nor_lit -  con_no_lit) /  con_nor_lit,
           Heterotrophic_respiration = ( so_no_lit +  con_nor_lit- con_no_lit) /  con_nor_lit,
-          Autotrophic_Respiration = ( con_no_lit -  so_no_lit) /  con_nor_lit,
-          #Mycorrhizae_respiration = ( my_no_lit -  so_no_lit) /  CTRL
+          Autotrophic_Respiration = ( con_no_lit -  my_no_lit) /  con_nor_lit,
+          Mycorrhizae_respiration = ( my_no_lit -  so_no_lit) /  con_nor_lit
   )%>%
   mutate(across(c('Autotrophic_Respiration','Heterotrophic_respiration','Litter_respiration'),~ replace(., (.< 0 | .>1),NA)))
-  #mutate(Mycorrhizae_respiration= replace(Mycorrhizae_respiration, (Mycorrhizae_respiration< -0.1 | Mycorrhizae_respiration>1),NA))
+#mutate(Mycorrhizae_respiration= replace(Mycorrhizae_respiration, (Mycorrhizae_respiration< -0.1 | Mycorrhizae_respiration>1),NA))
 
 #Final_lovely_result<-Final_lovely_result[complete.cases(Final_lovely_result),]
 # Only experiment with no NA finally survive (any na in any part of respiration will make the whole experiment removed)
