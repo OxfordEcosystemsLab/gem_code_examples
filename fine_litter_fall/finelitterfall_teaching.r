@@ -18,7 +18,7 @@
 #  This script was built by Dr Cecilia Giradin
 #  Modified by Huanyuan Zhang hyzhang1996@gmail.com,
 #  Script was checked by Guillaume Delhaye and Terhi Ruitta
-#   2021 August 13 as part of the African data workshop
+# 2021 August 13 as part of the African data workshop
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~
