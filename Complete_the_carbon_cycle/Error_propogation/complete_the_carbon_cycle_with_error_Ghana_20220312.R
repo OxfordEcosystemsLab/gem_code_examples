@@ -13,12 +13,12 @@ Sum_with_error <- function(x, na.rm=TRUE){
 }
 
 # Sum_with_error is basically equation 1b in https://www.geol.lsu.edu/jlorenzo/geophysics/uncertainties/Uncertaintiespart2.html
-
+# This one is needed when you summarise plot scale data into site scale data, you would take a mean across plots, but not a mean across standard error, because you need to follow error propogation when combining errors
 standard_error_calc <- function(x, na.rm=TRUE) {
   if (na.rm) x <- na.omit(x)
   sqrt(var(x)/length(x))
 }
-
+# this is used to calculate standard error, it is like sd() or mean(), normally used for litter fall.
 mutate_with_error = function(.data, f) {
   exprs = list(
     # expression to compute new variable values
@@ -58,7 +58,7 @@ mutate_with_error = function(.data, f) {
 #                                                                              .
 #  > data %>% mutate_with_error(z ~ eex*y)                                     .
 #                                                                              .
-#          eex          y      eex_se       y_se           z       d_se        .
+#          eex          y      eex_se       y_se           z       z_se        .
 #                                                                              .
 #  1 0.9238287 0.13630719 0.047671489 0.05553732 0.125924488 0.05171681        .
 #                                                                              .
@@ -71,6 +71,19 @@ mutate_with_error = function(.data, f) {
 #  5 0.1342505 0.91195619 0.075698744 0.06574103 0.122430594 0.06959582        .
 #                                                                              .
 #...............................................................................
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    Literfall                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NPP_fine_litter_fall <- read.xlsx("FLF_NPP_Input/FLF_NPP.xlsx") %>%
+  select(plot_code, year, month, day, total_litterfall_MgC_ha_month, leaves_MgC_ha_month) %>%
+  rename(npp_MgC_ha_month = total_litterfall_MgC_ha_month)
+
+processed_NPP_fine_litter_fall <- NPP_fine_litter_fall 
+  group_by(plot_code)%>%
+  summarise(NPP_fine_litterfall = mean(npp_MgC_ha_year, na.rm = T),
+            NPP_fine_litterfall_se = standard_error_calc(npp_MgC_ha_year, na.rm = T))
+
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                    NPP                                   ----

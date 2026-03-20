@@ -13,7 +13,7 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ##~~~~~~~~~~~~~~~~
-##  ···Authors----
+##  ???Authors----
 ##~~~~~~~~~~~~~~~~
 
 #  This script was built upon joined efforts by lots of people in
@@ -32,7 +32,7 @@
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···How does this script work?  ----
+##  ???How does this script work?  ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -52,7 +52,7 @@
 #  respiration                                                                  
 
 
-#··············································································?
+#???????????????????????????????????????????????????????????????????????????????
 #  We have: con_no_lit, CTRL, my_no_lit, so_no_lit                             ?
 #                                                                              ?
 #  con_nor_lit = control & normal litterfall,                                  ?
@@ -73,10 +73,10 @@
 #  Autotrophic Respiration = (con_no_lit - my_no_lit) / CTRL                   ?
 #  Mycorrhizae respiration = (my_no_lit - so_no_lit) / CTRL                    ?
 #                                                                              ?
-#··············································································?
+#???????????????????????????????????????????????????????????????????????????????
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···Necessary input  ----
+##  ???Necessary input  ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  # $ sub_plot                   : int  1 1 1 1 1 1 1 1 1 1 ...
@@ -95,7 +95,7 @@
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~
-##  ···important note----
+##  ???important note----
 ##~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -112,7 +112,7 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ##~~~~~~~~~~~~~~~~~~~~~~
-##···quality check  ----
+##???quality check  ----
 ##~~~~~~~~~~~~~~~~~~~~~~
 
 rm(list = ls())
@@ -145,13 +145,13 @@ GEM_raw$sub_plot <- as.factor(GEM_raw$sub_plot)
 GEM_raw$plot_corner_code <- as.character(GEM_raw$plot_corner_code)
 GEM_raw$replica <- as.factor(GEM_raw$replica)
 GEM_raw$co2ref_ppm_sec <- as.numeric(GEM_raw$co2ref)
-GEM_raw$treatment_code <- as.character(GEM_raw$treatment_code_partitioning)
+GEM_raw$treatment_code_partitioning <- as.character(GEM_raw$treatment_code_partitioning)
 GEM_raw$time <- as.numeric(GEM_raw$time)
 GEM_raw$atmp_mb <- as.numeric(GEM_raw$atmp)
 GEM_raw$InputF <- as.numeric(GEM_raw$InputF)
 GEM_raw$measurement_code <- as.character(GEM_raw$measurement_code)
 
-unique(GEM_raw$treatment_code)
+unique(GEM_raw$treatment_code_partitioning)
 unique(GEM_raw$plot_corner_code)
 
 ##~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +180,7 @@ one_measurement_id = c(
   'month',
   'year',
   'measurement_code',
-  'treatment_code')
+  'treatment_code_partitioning')
 
 #this is 1 egm measurement so under one of 'one_measurement_id' you should see only 27 rows
 #  This combination need to be a unique flag for each measurement, you
@@ -196,11 +196,12 @@ One_experiment_id = c('plot_code',
                       'year')
 # one set (array). One experiment id is a unique id for each experiment, a experiment is a group of C1 S1 S2 S3, or a group of con_nor_lit, con_no_lit, my_no_lit, so_no_lit,ml
 # Normally, according to GEM RAINFOR manual, each subplot should have maximum one experiment. 
-
+# so when we subset one of the One_experiment_id, you will see 4 EGM measurements, corresponding to C1 S1 S2 S3 on one of the dates at one of the location (subplot/corner)
 Collar_id = c('plot_code',
               'plot_corner_code', 
-              'treatment_code')
+              'treatment_code_partitioning')
 # this is a collar
+# so when we subset one of the Collar_id, we get a time_series from one of the collars (one of the C1 S1 S2 S3)
 
 # I just grab temperature from meteological station dataset
 #Temp <- read.table("F:/Oxford/Chapter_two/stem_respiration/input/BOB_gapfill_erai_monthly_1979_2017.csv", sep = ",", header = TRUE)
@@ -224,7 +225,7 @@ data1 = GEM_raw
 # These several lines fill NA in atmosphere pressure, estimate missing atmospheric pressure whith temperature-dependent version of the barometric equation (see soilrespiration_auxfunctions)
 
 data1 <- data1 %>%
-  mutate(treatment_code=ifelse(is.na(treatment_code),measurement_code,treatment_code))%>%
+  mutate(treatment_code_partitioning=ifelse(is.na(treatment_code_partitioning),measurement_code,treatment_code_partitioning))%>%
   mutate(atmp_mb = ifelse(
     is.na(atmp_mb),
     barometric_equation_T(elevation = 399, temp = air_temp_c),
@@ -318,9 +319,9 @@ All_resp_treatment <- All_resp %>%
   mutate(codew_exp = paste(!!!rlang::syms(One_experiment_id),sep = "_")) %>% 
   mutate(codew_collar = paste(!!!rlang::syms(Collar_id),sep = "_")) %>% 
   group_by(codew_exp) %>% 
-  mutate(all_treatment_code = paste(treatment_code, collapse = "~")) %>%
-  mutate(number_of_exp_records = length(treatment_code))%>%
-  mutate(number_of_unique_exp_flags = length(unique(treatment_code)))%>%
+  mutate(all_treatment_code_partitioning = paste(treatment_code_partitioning, collapse = "~")) %>%
+  mutate(number_of_exp_records = length(treatment_code_partitioning))%>%
+  mutate(number_of_unique_exp_flags = length(unique(treatment_code_partitioning)))%>%
   ungroup()%>% 
   group_by(codew_collar) %>% 
   mutate(Outlier_id = scores_na((MgC_year_per_ha), type = "iqr"))
@@ -408,21 +409,21 @@ PIVOT_table<-All_resp_treatment_no_outlier%>%
   mutate(id = codew_exp)%>%
   mutate(avg=MgC_year_per_ha_no_outlier)%>%
   tidyr::pivot_wider(id_cols = id, 
-                     names_from = treatment_code, 
+                     names_from = treatment_code_partitioning, 
                      values_from = c("avg"))
   
-#·························IMPORTANT NOTE························?
-#·························IMPORTANT NOTE························?
-#·························IMPORTANT NOTE························?
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
 
 #  NOW have a look at your pivot table and think about how to calculate         
 #  respiration proportion, as you can see, there are lots of NA, source from    
 #  (1) missing in raw data (2) outlier removal                                  
 
 
-#·························IMPORTANT NOTE························?
-#·························IMPORTANT NOTE························?
-#·························IMPORTANT NOTE························?
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
+#?????????????????????????IMPORTANT NOTE?????????????????????????
 
 #.............data cleaning - remove bad experiment set up.......
 

@@ -2,11 +2,11 @@ source("error_propogation_based_on_BIOMASS.r")
 
 grab_total_error<-function(cen_error_propogate,census1_year,NPP_plot){
   
-  cen_error_propogate$HRSE<-2 # assume an error of 2 m on measured H
+  cen_error_propogate$HRSE<-5 # assume an error of 5 m on measured H
   cen_error_propogate$dbh<-  cen_error_propogate$dbh/10 #the package work on cm
   
   
-  Taxo<-correctTaxo(genus=cen_error_propogate$genus,species=cen_error_propogate$species,useCache=T)
+  Taxo<-correctTaxo(genus=cen_error_propogate$genus,species=cen_error_propogate$species,useCache=F)
   #Use the above line if your species name is not typed correctly
   #and use cen_error_propogate$genusCorr and cen_error_propogate$speciesCorr in the following line
   cen_error_propogate$genusCorr<-Taxo$genusCorrected

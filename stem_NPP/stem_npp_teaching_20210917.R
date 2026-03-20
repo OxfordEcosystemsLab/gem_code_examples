@@ -28,7 +28,7 @@
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···Necessary input  ----
+##  ???Necessary input  ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #   Your Census should contain                                                        
@@ -237,9 +237,9 @@ cen <- mutate(cen, dbh_log=log(dbh))%>%
     
     cen[!cen$year==Year_with_height,'height_m']<-NA
     the_year_with_height <- subset(cen, year==Year_with_height)
-    if (nrow(the_year_with_height)<49) {warnings("$$$$$>>>the_year_with_height has height records less than 50! You should choose option 2 for height corretion") } 
     
     df2 <- the_year_with_height %>% filter(!is.na(height_m))  
+    if (nrow(df2)<49) {warnings("$$$$$>>>the_year_with_height has height records less than 50! You should choose option 2 for height corretion") } 
     
     # This will take a long time to run (Or you can try the other methods for fit):
     # You will get warning message, don't panic!
@@ -386,8 +386,9 @@ cen <- mutate(cen, dbh_log=log(dbh))%>%
     dplyr::rename(year2 = year.y)%>%
     dplyr::rename(dbh_year1 = dbh.x)%>%
     dplyr::rename(dbh_year2 = dbh.y)%>%
-    mutate(npp_per_tree_MgC_year  = (agC_year2-agC_year1) / census_interval *365)
-    
+    mutate(dbh_difference = dbh_year2 - dbh_year1,
+           npp_per_tree_MgC_year = ifelse( abs(dbh_difference) > 120, 0, (agC_year2 - agC_year1) / census_interval * 365))
+    # we assume that dbh grow by 120mm in a year is not possible, but you may want to change this parameter to a lower value
 
   # this one calculate total npp and total biomass for the whole plot
   NPP_plot <- npp %>%
@@ -407,14 +408,18 @@ cen <- mutate(cen, dbh_log=log(dbh))%>%
   
   # get ready for error propagation, 
   # You can check grab_total_error.R if you want to know how to calculate error
-  cen_error_propogate<-cen[,c('species','genus','year','height_final','density','dbh')]
+  cen_error_propogate<-cen[,c('species','genus','year','height_final','density','dbh','tree_tag')]
   NPP_plot<-grab_total_error(cen_error_propogate,census1_year,NPP_plot)
+  NPP_plot$npp_std = NPP_plot$npp_std / census_interval *365 # error of NPP was calculated assuming NPP = year2 - year1, it needs to be standardized with number of years
 # if you need to convert unit, for example kg to g:
 # if your plot is not 1 hectare, you can convert it here
-#   NPP_plot$npp_per_tree_MgC_year = NPP_plot$npp_per_tree_MgC_year / 1000
+#   NPP_plot$npp_per_tree_MgC_year = NPP_plot$npp_per_ha_MgC_year / 1000
 #   NPP_plot$npp_std = NPP_plot$npp_std /1000
 #   NPP_plot$biomass_year1_per_ha_MgC = NPP_plot$biomass_year1_per_ha_MgC /1000
 #   NPP_plot$biomass_year2_per_ha_MgC = NPP_plot$biomass_year2_per_ha_MgC /1000
+  #  NPP_plot$biomass_year1_std = NPP_plot$biomass_year1_std /1000
+  #  NPP_plot$biomass_year2_std = NPP_plot$biomass_year2_std /1000
+  
   
   NPP_plot$plot_code<-plotname
   NPP_plot$census1_year<-census1_year

@@ -306,8 +306,8 @@ Total_stem_area <- census %>%
   mutate(stem_area = Chambers2004_surfaceArea(dbh / 10)) %>% # [m^2] Stem Area per tree, , input dbh must be in [cm]!!!!!!
   group_by(year,plot_code) %>%
   summarise(total_stem_area_per_year = sum(stem_area, na.rm = T))%>%
-  mutate(total_stem_area_per_year_se = total_stem_area_per_year*0.1)
-# timed by 0.1 as a broad estimate of standard error 10%
+  mutate(total_stem_area_per_year_se = total_stem_area_per_year*0.3) 
+# timed by 0.1 as a broad estimate of standard error 30% # following Chambers 2004.... Yadvinder: this is very crude!
 Per_year_table <- All_resp %>%
   group_by(year,plot_code) %>%
   summarise(
@@ -344,7 +344,7 @@ write.csv(Per_year_table, file = paste0(census$plot_code[1], "_stem_respiration_
 #  trees in census
 
 avaerage_stem_area_m2 <- mean(Total_stem_area$total_stem_area_per_year)
-avaerage_stem_area_m2_se = avaerage_stem_area_m2*0.1
+avaerage_stem_area_m2_se = avaerage_stem_area_m2*0.3
 avaerage_flux_ <- mean(All_resp$flux_umolm2sec_no_outlier, na.rm = T)
 avaerage_flux_se <-standard_error_calc(All_resp$flux_umolm2sec_no_outlier, na.rm = T)
 plot_level_result <- avaerage_stem_area_m2 * avaerage_flux_ * convert_year
@@ -372,7 +372,7 @@ ggplot(All_resp, aes(x = as.factor(month), y = flux_umolm2sec_no_outlier)) +
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ···Get temperature from other dataset----
+##  ???Get temperature from other dataset----
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # data1 is your stem_resp dataset
 data1$Decimal_Date <- lubridate::decimal_date(as.Date(paste(data1$year, data1$month, data1$day, sep = "-")))
@@ -393,7 +393,7 @@ for (i in 1:nrow(data1)) {
 }
 
 ## ~~~~~~~~~~~~~~~~~~~
-##  ···Other info----
+##  ???Other info----
 ## ~~~~~~~~~~~~~~~~~~~
 
 ## someone propose a temperature correction

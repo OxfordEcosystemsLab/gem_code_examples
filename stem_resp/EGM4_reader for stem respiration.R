@@ -4,13 +4,13 @@
 ##                                    usage                                 ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 setwd("C:/Users/Huanyuan/Desktop/carbon analysis 2023/total_soil_respiration/BOB TOTAL/2013/10) october")
-
+setwd('C:/Users/Huanyuan Zhang-Zheng/Desktop/Stem_respiration')
 #  The EGM-5 soil respiration measurement is in a different format to EGM-4,    
 #  this file was used to import and correct column name of EGM-5                
 library(tidyverse)
 library(openxlsx)
 
-myfilelist<-list.files(path = getwd(),pattern = ".dat")
+myfilelist<-list.files(path = getwd(),pattern = ".dat",recursive = T)
 
 for (i in 1:length(myfilelist)) {
   
