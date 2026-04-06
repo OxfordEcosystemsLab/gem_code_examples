@@ -50,14 +50,14 @@ library(tools)
 library(lubridate)
 # Set your working directory (the file where your data, code and functions.r are located )
 # Be careful to use / and not \
-setwd("F:/Side_project/african_data_workshop/gem_code_examples/fine_litter_fall/")
+setwd("/Users/harrietatherton/Documents/Malhi_RA/GitHub/gem_code_examples/fine_litter_fall")
 
 # Load pre prepared functions
 source("functions_flf_v2.r")
 
 # Load your data. 
 # Since we are in the right directory, we can just write the name of the dataset
-data_flf_name<-'flf_20190201_XXX.csv'
+data_flf_name<-'/Users/harrietatherton/Documents/Malhi_RA/GitHub/gem_code_examples/fine_litter_fall/flf_20190201_XXX(example).csv'
 
 # Use the right separator for your data, depends on how you saved the .csv file (comma separator or ; separator)
 data_flf <- read.csv(data_flf_name) %>%
@@ -161,9 +161,9 @@ colnames(All_npp)<-str_replace_all(old_col_name,'_g_per_trap','_MgC_ha_month')
 if(max(All_npp$DaysBetween,na.rm = TRUE)>60){
   warnings("Check your time interval, there are very large value")}
 
-
-
-write.csv(All_npp, file=paste0(data_flf$plot_code[1], "_fine_litter_fall_NPP_finest.csv"))
+##Installing xlsx package to write.xlsx
+library("openxlsx")
+write.xlsx(All_npp, file=paste0(data_flf$plot_code[1], "_FLFNPP.xlsx"))
 
 #There is no standard error because it is the finest resolution. We recommend to calculate standard error with 
 
